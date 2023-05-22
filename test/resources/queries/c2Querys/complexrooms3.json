@@ -1,0 +1,166 @@
+{
+	"title": "sf",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"GT": {
+						"rooms_seats": 75
+					}
+				},
+				{
+					"IS": {
+						"rooms_furniture": "*Tables*"
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"rooms_shortname",
+				"seatsAv",
+				"seatsMax"
+			]
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"rooms_shortname"
+			],
+			"APPLY": [
+				{
+					"seatsMax": {
+						"MAX": "rooms_seats"
+					}
+				},
+				{
+					"seatsAv": {
+						"AVG": "rooms_seats"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"rooms_shortname": "ALRD",
+			"seatsAv": 94,
+			"seatsMax": 94
+		},
+		{
+			"rooms_shortname": "BIOL",
+			"seatsAv": 76,
+			"seatsMax": 76
+		},
+		{
+			"rooms_shortname": "BUCH",
+			"seatsAv": 88,
+			"seatsMax": 108
+		},
+		{
+			"rooms_shortname": "CHBE",
+			"seatsAv": 147,
+			"seatsMax": 200
+		},
+		{
+			"rooms_shortname": "CEME",
+			"seatsAv": 100,
+			"seatsMax": 100
+		},
+		{
+			"rooms_shortname": "ESB",
+			"seatsAv": 80,
+			"seatsMax": 80
+		},
+		{
+			"rooms_shortname": "LASR",
+			"seatsAv": 80,
+			"seatsMax": 80
+		},
+		{
+			"rooms_shortname": "FRDM",
+			"seatsAv": 160,
+			"seatsMax": 160
+		},
+		{
+			"rooms_shortname": "GEOG",
+			"seatsAv": 100,
+			"seatsMax": 100
+		},
+		{
+			"rooms_shortname": "HEBB",
+			"seatsAv": 375,
+			"seatsMax": 375
+		},
+		{
+			"rooms_shortname": "ANGU",
+			"seatsAv": 170,
+			"seatsMax": 260
+		},
+		{
+			"rooms_shortname": "DMP",
+			"seatsAv": 120,
+			"seatsMax": 160
+		},
+		{
+			"rooms_shortname": "IONA",
+			"seatsAv": 100,
+			"seatsMax": 100
+		},
+		{
+			"rooms_shortname": "IBLC",
+			"seatsAv": 133,
+			"seatsMax": 154
+		},
+		{
+			"rooms_shortname": "LSK",
+			"seatsAv": 194,
+			"seatsMax": 205
+		},
+		{
+			"rooms_shortname": "LSC",
+			"seatsAv": 275,
+			"seatsMax": 350
+		},
+		{
+			"rooms_shortname": "MCLD",
+			"seatsAv": 114.33,
+			"seatsMax": 136
+		},
+		{
+			"rooms_shortname": "PHRM",
+			"seatsAv": 201.5,
+			"seatsMax": 236
+		},
+		{
+			"rooms_shortname": "OSBO",
+			"seatsAv": 442,
+			"seatsMax": 442
+		},
+		{
+			"rooms_shortname": "SRC",
+			"seatsAv": 299,
+			"seatsMax": 299
+		},
+		{
+			"rooms_shortname": "SWNG",
+			"seatsAv": 188.75,
+			"seatsMax": 190
+		},
+		{
+			"rooms_shortname": "WOOD",
+			"seatsAv": 112,
+			"seatsMax": 120
+		}
+	]
+}
+
+
+
+
+
+
+
+
+
+

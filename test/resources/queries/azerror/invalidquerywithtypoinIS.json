@@ -1,0 +1,19 @@
+{
+	"title": "Invalid Query - InsightError - There is a typo in IS, should be IS not IS*",
+	"input": {
+		"WHERE": {
+			"IS*": {
+				"courses_dept": "cpsc"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_id"
+			],
+			"ORDER": "courses_id"
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

@@ -1,0 +1,29 @@
+{
+	"title": "SELECT dept, avg WHERE avg > 97",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"rooms_shortname": "ORCH"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"rooms_name",
+				"rooms_href"
+			]
+		}
+	},
+	"errorExpected": false,
+	"expected": [{"rooms_name":"ORCH_1001","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ORCH-1001"},{"rooms_name":"ORCH_3002","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ORCH-3002"},{"rooms_name":"ORCH_3004","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ORCH-3004"},{"rooms_name":"ORCH_3016","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ORCH-3016"},{"rooms_name":"ORCH_3018","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ORCH-3018"},{"rooms_name":"ORCH_3052","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ORCH-3052"},{"rooms_name":"ORCH_3058","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ORCH-3058"},{"rooms_name":"ORCH_3062","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ORCH-3062"},{"rooms_name":"ORCH_3068","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ORCH-3068"},{"rooms_name":"ORCH_3072","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ORCH-3072"},{"rooms_name":"ORCH_3074","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ORCH-3074"},{"rooms_name":"ORCH_4002","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ORCH-4002"},{"rooms_name":"ORCH_4004","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ORCH-4004"},{"rooms_name":"ORCH_4016","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ORCH-4016"},{"rooms_name":"ORCH_4018","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ORCH-4018"},{"rooms_name":"ORCH_4052","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ORCH-4052"},{"rooms_name":"ORCH_4058","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ORCH-4058"},{"rooms_name":"ORCH_4062","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ORCH-4062"},{"rooms_name":"ORCH_4068","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ORCH-4068"},{"rooms_name":"ORCH_4072","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ORCH-4072"},{"rooms_name":"ORCH_4074","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ORCH-4074"}]
+}
+
+
+
+
+
+
+
+
+
+
+

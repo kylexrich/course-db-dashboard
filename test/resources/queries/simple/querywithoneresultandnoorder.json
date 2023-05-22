@@ -1,0 +1,43 @@
+{
+	"title": "A query with one result only, and has no order",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"courses_dept": "cpsc"
+					}
+				},
+				{
+					"IS": {
+						"courses_instructor": "kiczales, gregor"
+					}
+				},
+				{
+					"GT": {
+						"courses_avg": 85
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_avg",
+				"courses_title",
+				"courses_id",
+				"courses_instructor"
+			]
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"courses_dept": "cpsc",
+			"courses_avg": 85.11,
+			"courses_title": "comptn, progrmng",
+			"courses_id": "110",
+			"courses_instructor": "kiczales, gregor"
+		}
+	]
+}

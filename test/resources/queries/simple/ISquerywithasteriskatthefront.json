@@ -1,0 +1,65 @@
+{
+	"title": "A query with IS that has an asterisk at the front, meaning the string should end with the given char",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"courses_dept": "cpsc"
+					}
+				},
+				{
+					"IS": {
+						"courses_instructor": "*k"
+					}
+				},
+				{
+					"GT": {
+						"courses_avg": 85
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_title",
+				"courses_id",
+				"courses_instructor"
+			]
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"courses_dept": "cpsc",
+			"courses_title": "parallel comput",
+			"courses_id": "418",
+			"courses_instructor": "greenstreet, mark"
+		},
+		{
+			"courses_dept": "cpsc",
+			"courses_title": "intgrt sys desgn",
+			"courses_id": "513",
+			"courses_instructor": "greenstreet, mark"
+		},
+		{
+			"courses_dept": "cpsc",
+			"courses_title": "para algs & arch",
+			"courses_id": "521",
+			"courses_instructor": "greenstreet, mark"
+		},
+		{
+			"courses_dept": "cpsc",
+			"courses_title": "machine learn i",
+			"courses_id": "540",
+			"courses_instructor": "schmidt, mark"
+		},
+		{
+			"courses_dept": "cpsc",
+			"courses_title": "machine learn i",
+			"courses_id": "540",
+			"courses_instructor": "schmidt, mark"
+		}
+	]
+}

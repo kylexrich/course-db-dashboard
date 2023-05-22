@@ -1,0 +1,19 @@
+{
+	"title": "Invalid Query - InsightError - There is a typo in GT, should be GT not GT*",
+	"input": {
+		"WHERE": {
+			"GT*": {
+				"courses_avg": 90
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_id"
+			],
+			"ORDER": "courses_id"
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

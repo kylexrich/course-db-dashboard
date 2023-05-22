@@ -1,0 +1,41 @@
+{
+	"title": "SELECT dept, id, instructor, avg WHERE ((avg > 80 && avg < 90) || (avg > 50 && !(avg > 61))) && (dept == cpsc || dept == comm) ORDER BY avg",
+	"input": {
+		"WHERE": {
+			"GT": {
+				"courses_avg": 97
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_instructor",
+				"numProfs",
+				"overallAvg"
+			],
+			"ORDER": {
+				"dir": "DOWN",
+				"keys": ["courses_dept"]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_dept","courses_instructor"
+			],
+			"APPLY": [
+				{
+					"overallAvg": {
+						"AVG": "courses_avg"
+					}
+				},
+				{
+					"numProfs": {
+						"COUNT": "courses_instructor"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": false,
+	"expected": [{"courses_dept":"spph","courses_instructor":"frank, erica","numProfs":1,"overallAvg":98.98},{"courses_dept":"spph","courses_instructor":"","numProfs":1,"overallAvg":98.98},{"courses_dept":"nurs","courses_instructor":"brew, nancy","numProfs":1,"overallAvg":98.02},{"courses_dept":"nurs","courses_instructor":"","numProfs":1,"overallAvg":98.21},{"courses_dept":"nurs","courses_instructor":"krist, jennifer","numProfs":1,"overallAvg":98.21},{"courses_dept":"nurs","courses_instructor":"burrows, marlene;harding, jillian;krist, jennifer;mccuaig, fairleth","numProfs":1,"overallAvg":98.02},{"courses_dept":"math","courses_instructor":"fraser, ailana","numProfs":1,"overallAvg":97.25},{"courses_dept":"math","courses_instructor":"","numProfs":1,"overallAvg":97.9},{"courses_dept":"math","courses_instructor":"gomez, jose","numProfs":1,"overallAvg":99.78},{"courses_dept":"math","courses_instructor":"karu, kalle","numProfs":1,"overallAvg":97.48},{"courses_dept":"math","courses_instructor":"laba, izabella","numProfs":1,"overallAvg":97.09},{"courses_dept":"epse","courses_instructor":"cole, kenneth","numProfs":1,"overallAvg":98.02},{"courses_dept":"epse","courses_instructor":"","numProfs":1,"overallAvg":97.99},{"courses_dept":"epse","courses_instructor":"grow, laura","numProfs":1,"overallAvg":98.46},{"courses_dept":"epse","courses_instructor":"wilk, diana","numProfs":1,"overallAvg":97.41},{"courses_dept":"epse","courses_instructor":"cannon, joanna","numProfs":1,"overallAvg":98.45},{"courses_dept":"epse","courses_instructor":"amaral, deborah;ford, laurie","numProfs":1,"overallAvg":97.78},{"courses_dept":"epse","courses_instructor":"kishor, nand","numProfs":1,"overallAvg":97.09},{"courses_dept":"epse","courses_instructor":"porath, marion","numProfs":1,"overallAvg":97.67},{"courses_dept":"eece","courses_instructor":"coria, lino","numProfs":1,"overallAvg":98.75},{"courses_dept":"eece","courses_instructor":"","numProfs":1,"overallAvg":98.75},{"courses_dept":"educ","courses_instructor":"morgan, tannis","numProfs":1,"overallAvg":97.5},{"courses_dept":"crwr","courses_instructor":"maillard, keith","numProfs":1,"overallAvg":98},{"courses_dept":"crwr","courses_instructor":"grady, albert wayne","numProfs":1,"overallAvg":98},{"courses_dept":"cnps","courses_instructor":"cox, daniel","numProfs":1,"overallAvg":99.19},{"courses_dept":"cnps","courses_instructor":"neault, roberta a","numProfs":1,"overallAvg":97.47},{"courses_dept":"cnps","courses_instructor":"","numProfs":1,"overallAvg":97.47}]
+}

@@ -1,0 +1,25 @@
+{
+	"title": "da",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"rooms_shortname": "LASR"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"rooms_shortname",
+				"rooms_lat",
+				"rooms_lon"
+			]
+		}
+	},
+	"errorExpected": false,
+	"expected": [{"rooms_shortname":"LASR","rooms_lat":49.26767,"rooms_lon":-123.25583},{"rooms_shortname":"LASR","rooms_lat":49.26767,"rooms_lon":-123.25583},{"rooms_shortname":"LASR","rooms_lat":49.26767,"rooms_lon":-123.25583},{"rooms_shortname":"LASR","rooms_lat":49.26767,"rooms_lon":-123.25583},{"rooms_shortname":"LASR","rooms_lat":49.26767,"rooms_lon":-123.25583},{"rooms_shortname":"LASR","rooms_lat":49.26767,"rooms_lon":-123.25583}]
+}
+
+
+
+
+
+

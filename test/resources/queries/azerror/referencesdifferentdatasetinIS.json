@@ -1,0 +1,19 @@
+{
+	"title": "Invalid Query - InsightError - referenced a dataset with the id: 'id' instead of 'courses' in IS",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"id_dept": "cpsc"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_avg",
+				"courses_uuid"
+			],
+			"ORDER": "courses_avg"
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

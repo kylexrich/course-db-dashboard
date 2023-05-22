@@ -1,0 +1,212 @@
+.where {
+	margin-left: 40px;
+	color: #04aa6d;
+}
+.row {
+	margin-bottom: 12px;
+}
+
+.hide {
+	display: none;
+}
+
+.btn-group {
+	margin-left: 150px !important;
+}
+
+.textForValue {
+	margin-left: 10px;
+}
+
+.valueText {
+	margin-left: 10px;
+}
+
+.rectangleRect {
+	color: darkturquoise;
+}
+
+.rectangleSvg {
+	color: darkturquoise;
+}
+
+.selectWhere {
+	margin-left: 40px;
+}
+
+.operators {
+	margin-left: 150px;
+	color: darkturquoise;
+}
+
+.options {
+	color: #04aa6d;
+}
+
+.table {
+	margin-left: 120px;
+	width: 80% !important;
+}
+
+.dropdownWhere {
+	position: relative;
+	display: inline-block;
+	padding-left: 35px;
+}
+
+.options {
+	margin-left: 75px;
+}
+
+.addButton {
+	color: black;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	width: 30px !important;
+	background-color: lawngreen;
+	display: none;
+}
+
+.notText {
+	color: grey;
+}
+
+.fieldsText {
+	color: grey;
+}
+
+.valueText {
+	color: grey;
+}
+
+.addButton:hover {
+	cursor: pointer;
+}
+
+.removeButton {
+	color: white;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	width: 30px !important;
+	background-color: red;
+	display: none;
+}
+
+.removeButton:hover {
+	cursor: pointer;
+}
+
+.checkboxNot:hover {
+	cursor: pointer !important;
+}
+
+.form-select:hover {
+	cursor: pointer !important;
+}
+
+.checkboxForFields:hover {
+	cursor: pointer !important;
+}
+
+.rectangle {
+	background-color: darkturquoise;
+}
+
+/* taken from https://www.w3schools.com/howto/howto_js_topnav.asp*/
+.topnav {
+	background-color: #333!important;
+	overflow: hidden!important;
+}
+
+/* taken from https://www.w3schools.com/howto/howto_js_topnav.asp*/
+.topnav a {
+	float: left!important;
+	color: #f2f2f2!important;
+	text-align: center!important;
+	padding: 14px 16px!important;
+	text-decoration: none!important;
+	font-size: 17px!important;
+}
+
+/* taken from https://www.w3schools.com/howto/howto_js_topnav.asp*/
+.topnav a:hover {
+	background-color: #ddd!important;
+	color: black!important;
+	cursor: pointer !important;
+}
+
+/* taken from https://www.w3schools.com/howto/howto_js_topnav.asp*/
+.topnav a.active {
+	background-color: #04AA6D!important;
+	color: white!important;
+}
+/*Copyleft 2017 Jonas Earendel*/
+.sortable {
+	border-spacing: 0;
+}
+/*Copyleft 2017 Jonas Earendel*/
+.sortable tbody tr:nth-child(odd) {
+	background: #e4e4e4;
+}
+/*Copyleft 2017 Jonas Earendel*/
+.sortable td,
+.sortable th {
+	padding: 10px;
+}
+/*Copyleft 2017 Jonas Earendel*/
+.sortable td:first-child,
+.sortable th:first-child {
+	border-top-left-radius: 4px;
+}
+/*Copyleft 2017 Jonas Earendel*/
+.sortable td:last-child,
+.sortable th:last-child {
+	border-top-right-radius: 4px;
+}
+/*Copyleft 2017 Jonas Earendel*/
+.sortable th {
+	background: #808080;
+	color: #fff;
+	cursor: pointer;
+	font-weight: normal;
+	text-align: left;
+	text-transform: capitalize;
+	vertical-align: baseline;
+	white-space: nowrap;
+}
+/*Copyleft 2017 Jonas Earendel*/
+.sortable th:hover {
+	color: #000;
+}
+/*Copyleft 2017 Jonas Earendel*/
+.sortable th:hover::after {
+	color: inherit;
+	font-size: 1.2em;
+	content: ' \025B8';
+}
+/*Copyleft 2017 Jonas Earendel*/
+.sortable th::after {
+	font-size: 1.2em;
+	color: transparent;
+	content: ' \025B8';
+}
+/*Copyleft 2017 Jonas Earendel*/
+.sortable th.dir-d {
+	color: #000;
+}
+/*Copyleft 2017 Jonas Earendel*/
+.sortable th.dir-d::after {
+	color: inherit;
+	content: ' \025BE';
+}
+/*Copyleft 2017 Jonas Earendel*/
+.sortable th.dir-u {
+	color: #000;
+}
+/*Copyleft 2017 Jonas Earendel*/
+.sortable th.dir-u::after {
+	color: inherit;
+	content: ' \025B4';
+}

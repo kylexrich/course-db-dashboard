@@ -1,0 +1,20 @@
+{
+	"title": "Invalid Query - InsightError - IS contains invalid key",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"courses_uid": "0"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_avg",
+				"courses_uuid"
+			],
+			"ORDER": "courses_avg"
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

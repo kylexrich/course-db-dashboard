@@ -1,0 +1,17 @@
+{
+	"title": "Invalid Query - InsightError - OR needs to have at least one key",
+	"input": {
+		"WHERE": {
+			"OR": [{}]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_avg"
+			],
+			"ORDER": "courses_avg"
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

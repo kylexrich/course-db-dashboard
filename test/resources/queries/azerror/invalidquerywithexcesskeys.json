@@ -1,0 +1,36 @@
+{
+	"title": "Invalid Query - InsightError - Query has the excess key HELLO",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"courses_dept": "cpsc"
+					}
+				},
+				{
+					"IS": {
+						"courses_instructor": "*k*"
+					}
+				},
+				{
+					"GT": {
+						"courses_avg": 90
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_title",
+				"courses_id",
+				"courses_instructor"
+			],
+			"ORDER": "courses_id"
+		},
+		"HELLO": "hi"
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

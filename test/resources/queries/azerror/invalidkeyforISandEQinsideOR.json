@@ -1,0 +1,29 @@
+{
+	"title": "Invalid Query - InsightError - IS and EQ inside OR contain invalid key",
+	"input": {
+		"WHERE": {
+			"OR": [
+				{
+					"IS": {
+						"courses_pass": "test string"
+					}
+				},
+				{
+					"EQ": {
+						"courss_title": 4
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_avg",
+				"courses_uuid"
+			],
+			"ORDER": "courses_avg"
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

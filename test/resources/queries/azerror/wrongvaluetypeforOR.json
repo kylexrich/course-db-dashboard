@@ -1,0 +1,17 @@
+{
+	"title": "Invalid Query - InsightError - OR should get a comparator (as a key-value pair) as the value, not numbers",
+	"input": {
+		"WHERE": {
+			"OR": [1, 2, 3, 4]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_avg"
+			],
+			"ORDER": "courses_avg"
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

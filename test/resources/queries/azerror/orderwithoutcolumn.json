@@ -1,0 +1,18 @@
+{
+  "title": "Invalid Query - InsightError - Ordered by a non-existent column",
+  "input": {
+    "WHERE": {
+      "GT": {
+        "courses_avg": 97
+      }
+    },
+    "OPTIO": {
+      "COLUMNS": [
+        "courses_dept"
+      ],
+      "ORDER": "courses_avg"
+    }
+  },
+  "errorExpected": true,
+  "expected": "InsightError"
+}

@@ -1,0 +1,287 @@
+{
+	"title": "SELECT dept, id, instructor, avg WHERE ((avg > 80 && avg < 90) || (avg > 50 && !(avg > 61))) && (dept == cpsc || dept == comm) ORDER BY avg",
+	"input": {
+		"WHERE": {
+			"GT": {
+				"courses_avg": 97
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_id",
+				"courses_year",
+				"avgMax",
+				"avgMin"
+			],
+			"ORDER": {
+				"dir": "UP",
+				"keys": [
+					"courses_year",
+					"courses_id"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_id",
+				"courses_year"
+			],
+			"APPLY": [
+				{
+					"avgMax": {
+						"MAX": "courses_avg"
+					}
+				},
+				{
+					"avgMin": {
+						"MIN": "courses_avg"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"courses_id": "300",
+			"courses_year": 1900,
+			"avgMax": 98.98,
+			"avgMin": 98.98
+		},
+		{
+			"courses_id": "421",
+			"courses_year": 1900,
+			"avgMax": 98.36,
+			"avgMin": 97.29
+		},
+		{
+			"courses_id": "449",
+			"courses_year": 1900,
+			"avgMax": 98.76,
+			"avgMin": 98.58
+		},
+		{
+			"courses_id": "509",
+			"courses_year": 1900,
+			"avgMax": 98.71,
+			"avgMin": 98.21
+		},
+		{
+			"courses_id": "519",
+			"courses_year": 1900,
+			"avgMax": 98.45,
+			"avgMin": 98.45
+		},
+		{
+			"courses_id": "525",
+			"courses_year": 1900,
+			"avgMax": 97.25,
+			"avgMin": 97.25
+		},
+		{
+			"courses_id": "527",
+			"courses_year": 1900,
+			"avgMax": 99.78,
+			"avgMin": 99.78
+		},
+		{
+			"courses_id": "532",
+			"courses_year": 1900,
+			"avgMax": 97.48,
+			"avgMin": 97.48
+		},
+		{
+			"courses_id": "534",
+			"courses_year": 1900,
+			"avgMax": 97.41,
+			"avgMin": 97.41
+		},
+		{
+			"courses_id": "541",
+			"courses_year": 1900,
+			"avgMax": 98.75,
+			"avgMin": 97.09
+		},
+		{
+			"courses_id": "574",
+			"courses_year": 1900,
+			"avgMax": 97.47,
+			"avgMin": 97.47
+		},
+		{
+			"courses_id": "578",
+			"courses_year": 1900,
+			"avgMax": 98.58,
+			"avgMin": 97.53
+		},
+		{
+			"courses_id": "591",
+			"courses_year": 1900,
+			"avgMax": 97.33,
+			"avgMin": 97.33
+		},
+		{
+			"courses_id": "596",
+			"courses_year": 1900,
+			"avgMax": 97.09,
+			"avgMin": 97.09
+		},
+		{
+			"courses_id": "596",
+			"courses_year": 2007,
+			"avgMax": 97.09,
+			"avgMin": 97.09
+		},
+		{
+			"courses_id": "606",
+			"courses_year": 2007,
+			"avgMax": 97.67,
+			"avgMin": 97.67
+		},
+		{
+			"courses_id": "421",
+			"courses_year": 2009,
+			"avgMax": 98.7,
+			"avgMin": 98.08
+		},
+		{
+			"courses_id": "527",
+			"courses_year": 2009,
+			"avgMax": 99.78,
+			"avgMin": 99.78
+		},
+		{
+			"courses_id": "534",
+			"courses_year": 2009,
+			"avgMax": 97.78,
+			"avgMin": 97.78
+		},
+		{
+			"courses_id": "541",
+			"courses_year": 2009,
+			"avgMax": 98.75,
+			"avgMin": 98.75
+		},
+		{
+			"courses_id": "574",
+			"courses_year": 2009,
+			"avgMax": 97.47,
+			"avgMin": 97.47
+		},
+		{
+			"courses_id": "421",
+			"courses_year": 2010,
+			"avgMax": 97.29,
+			"avgMin": 97.29
+		},
+		{
+			"courses_id": "532",
+			"courses_year": 2010,
+			"avgMax": 97.48,
+			"avgMin": 97.48
+		},
+		{
+			"courses_id": "541",
+			"courses_year": 2010,
+			"avgMax": 97.09,
+			"avgMin": 97.09
+		},
+		{
+			"courses_id": "578",
+			"courses_year": 2010,
+			"avgMax": 98.58,
+			"avgMin": 98.58
+		},
+		{
+			"courses_id": "591",
+			"courses_year": 2010,
+			"avgMax": 97.33,
+			"avgMin": 97.33
+		},
+		{
+			"courses_id": "449",
+			"courses_year": 2011,
+			"avgMax": 97.41,
+			"avgMin": 97.41
+		},
+		{
+			"courses_id": "509",
+			"courses_year": 2011,
+			"avgMax": 98.71,
+			"avgMin": 98.71
+		},
+		{
+			"courses_id": "519",
+			"courses_year": 2011,
+			"avgMax": 98.45,
+			"avgMin": 98.45
+		},
+		{
+			"courses_id": "449",
+			"courses_year": 2012,
+			"avgMax": 98.76,
+			"avgMin": 98.58
+		},
+		{
+			"courses_id": "574",
+			"courses_year": 2012,
+			"avgMax": 99.19,
+			"avgMin": 99.19
+		},
+		{
+			"courses_id": "549",
+			"courses_year": 2013,
+			"avgMax": 97.69,
+			"avgMin": 97.69
+		},
+		{
+			"courses_id": "578",
+			"courses_year": 2013,
+			"avgMax": 98.5,
+			"avgMin": 98.5
+		},
+		{
+			"courses_id": "599",
+			"courses_year": 2013,
+			"avgMax": 98,
+			"avgMin": 98
+		},
+		{
+			"courses_id": "449",
+			"courses_year": 2014,
+			"avgMax": 98.8,
+			"avgMin": 98.8
+		},
+		{
+			"courses_id": "300",
+			"courses_year": 2015,
+			"avgMax": 98.98,
+			"avgMin": 98.98
+		},
+		{
+			"courses_id": "500",
+			"courses_year": 2015,
+			"avgMax": 97.5,
+			"avgMin": 97.5
+		},
+		{
+			"courses_id": "509",
+			"courses_year": 2015,
+			"avgMax": 98.21,
+			"avgMin": 98.21
+		},
+		{
+			"courses_id": "578",
+			"courses_year": 2015,
+			"avgMax": 97.53,
+			"avgMin": 97.53
+		},
+		{
+			"courses_id": "525",
+			"courses_year": 2016,
+			"avgMax": 97.25,
+			"avgMin": 97.25
+		}
+	]
+
+}

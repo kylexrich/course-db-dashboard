@@ -1,0 +1,28 @@
+{
+	"title": "Invalid Query - InsightError - referenced a dataset with the id: 'id1' and 'id2' instead of 'courses' in EQ and IS in AND",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"EQ": {
+						"id1_pass": 203
+					}
+				},
+				{
+					"IS": {
+						"id2_dept": "psyc"
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_avg",
+				"courses_uuid"
+			],
+			"ORDER": "courses_avg"
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

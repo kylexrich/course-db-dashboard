@@ -1,0 +1,90 @@
+{
+	"title": "A query with IS that has an asterisk both at the front and the end, meaning the string should include the given char",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"courses_dept": "cpsc"
+					}
+				},
+				{
+					"IS": {
+						"courses_instructor": "*k*"
+					}
+				},
+				{
+					"GT": {
+						"courses_avg": 90
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_title",
+				"courses_id",
+				"courses_instructor"
+			],
+			"ORDER": "courses_id"
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"courses_dept": "cpsc",
+			"courses_title": "honours thesis",
+			"courses_id": "449",
+			"courses_instructor": "knorr, edwin max"
+		},
+		{
+			"courses_dept": "cpsc",
+			"courses_title": "honours thesis",
+			"courses_id": "449",
+			"courses_instructor": "tsiknis, georgios"
+		},
+		{
+			"courses_dept": "cpsc",
+			"courses_title": "honours thesis",
+			"courses_id": "449",
+			"courses_instructor": "knorr, edwin max"
+		},
+		{
+			"courses_dept": "cpsc",
+			"courses_title": "honours thesis",
+			"courses_id": "449",
+			"courses_instructor": "tsiknis, georgios"
+		},
+		{
+			"courses_dept": "cpsc",
+			"courses_title": "honours thesis",
+			"courses_id": "449",
+			"courses_instructor": "tsiknis, georgios"
+		},
+		{
+			"courses_dept": "cpsc",
+			"courses_title": "comp comm protcl",
+			"courses_id": "527",
+			"courses_instructor": "beschastnikh, ivan"
+		},
+		{
+			"courses_dept": "cpsc",
+			"courses_title": "comp comm protcl",
+			"courses_id": "527",
+			"courses_instructor": "krasic, charles"
+		},
+		{
+			"courses_dept": "cpsc",
+			"courses_title": "machine learn i",
+			"courses_id": "540",
+			"courses_instructor": "schmidt, mark"
+		},
+		{
+			"courses_dept": "cpsc",
+			"courses_title": "machine learn i",
+			"courses_id": "540",
+			"courses_instructor": "schmidt, mark"
+		}
+	]
+}

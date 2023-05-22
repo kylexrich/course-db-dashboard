@@ -1,0 +1,7431 @@
+{
+	"title": "SELECT dept, id, instructor, avg WHERE ((avg > 80 && avg < 90) || (avg > 50 && !(avg > 61))) && (dept == cpsc || dept == comm) ORDER BY avg",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"OR": [
+						{
+							"AND": [
+								{
+									"GT": {
+										"courses_avg": 80
+									}
+								},
+								{
+									"LT": {
+										"courses_avg": 90
+									}
+								}
+							]
+						},
+						{
+							"AND": [
+								{
+									"GT": {
+										"courses_avg": 50
+									}
+								},
+								{
+									"NOT": {
+										"GT": {
+											"courses_avg": 60
+										}
+									}
+								}
+							]
+						},
+						{
+							"EQ": {
+								"courses_avg": 100
+							}
+						}
+					]
+				},
+				{
+					"OR": [
+						{
+							"IS": {
+								"courses_dept": "*co*"
+							}
+						}
+					]
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_id",
+				"courses_instructor",
+				"courses_avg"
+			],
+			"ORDER": "courses_avg"
+		}
+	},
+	"errorExpected": false,
+	"expected": [
+		{
+			"courses_dept": "comm",
+			"courses_id": "293",
+			"courses_instructor": "rajwani, aziz",
+			"courses_avg": 51.43
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "293",
+			"courses_instructor": "",
+			"courses_avg": 56.63
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "293",
+			"courses_instructor": "sinclair, scott",
+			"courses_avg": 57
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "293",
+			"courses_instructor": "",
+			"courses_avg": 57.18
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "293",
+			"courses_instructor": "rajwani, aziz",
+			"courses_avg": 57.25
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "293",
+			"courses_instructor": "sinclair, scott",
+			"courses_avg": 58.57
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "293",
+			"courses_instructor": "",
+			"courses_avg": 58.72
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "293",
+			"courses_instructor": "rajwani, aziz",
+			"courses_avg": 58.91
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "407",
+			"courses_instructor": "",
+			"courses_avg": 80.02
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "398",
+			"courses_instructor": "culham, thomas",
+			"courses_avg": 80.02
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "",
+			"courses_avg": 80.03
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "454",
+			"courses_instructor": "kroeker, jeff",
+			"courses_avg": 80.03
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "541",
+			"courses_instructor": "",
+			"courses_avg": 80.04
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "541",
+			"courses_instructor": "francois, patrick;kotwal, ashok",
+			"courses_avg": 80.04
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "450",
+			"courses_instructor": "campbell, chuck",
+			"courses_avg": 80.05
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "203",
+			"courses_instructor": "daniels, michael",
+			"courses_avg": 80.05
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "465",
+			"courses_instructor": "stone, ann",
+			"courses_avg": 80.06
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "395",
+			"courses_instructor": "bowker, elizabeth",
+			"courses_avg": 80.06
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "491",
+			"courses_instructor": "parra perez, alvaro",
+			"courses_avg": 80.07
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "474",
+			"courses_instructor": "",
+			"courses_avg": 80.07
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "374",
+			"courses_instructor": "favilukis, jack;pflueger, carolin",
+			"courses_avg": 80.08
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "462",
+			"courses_instructor": "stone, ann",
+			"courses_avg": 80.09
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "300",
+			"courses_instructor": "",
+			"courses_avg": 80.09
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "303",
+			"courses_instructor": "",
+			"courses_avg": 80.1
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "303",
+			"courses_instructor": "knight, thomas",
+			"courses_avg": 80.1
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "malhotra, nisha",
+			"courses_avg": 80.11
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "kong, wai-ching alfred",
+			"courses_avg": 80.11
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "480",
+			"courses_instructor": "",
+			"courses_avg": 80.11
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "480",
+			"courses_instructor": "lindsey, charles",
+			"courses_avg": 80.11
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "340",
+			"courses_instructor": "",
+			"courses_avg": 80.11
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "340",
+			"courses_instructor": "coops, nicholas charles",
+			"courses_avg": 80.11
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "475",
+			"courses_instructor": "heinkel, robert lee",
+			"courses_avg": 80.11
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "467",
+			"courses_instructor": "",
+			"courses_avg": 80.11
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "412",
+			"courses_instructor": "",
+			"courses_avg": 80.11
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "halevy, yoram",
+			"courses_avg": 80.12
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "337",
+			"courses_instructor": "",
+			"courses_avg": 80.12
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "337",
+			"courses_instructor": "",
+			"courses_avg": 80.12
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "325",
+			"courses_instructor": "",
+			"courses_avg": 80.13
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "325",
+			"courses_instructor": "whistler, diana",
+			"courses_avg": 80.13
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "491",
+			"courses_instructor": "chandra, ambarish",
+			"courses_avg": 80.13
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "467",
+			"courses_instructor": "silk, timothy",
+			"courses_avg": 80.14
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "467",
+			"courses_instructor": "silk, timothy",
+			"courses_avg": 80.16
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "467",
+			"courses_instructor": "",
+			"courses_avg": 80.16
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "371",
+			"courses_instructor": "",
+			"courses_avg": 80.16
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "401",
+			"courses_instructor": "",
+			"courses_avg": 80.16
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "halevy, yoram",
+			"courses_avg": 80.17
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "305",
+			"courses_instructor": "",
+			"courses_avg": 80.17
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "305",
+			"courses_instructor": "beaudry, paul;yedid levi, yaniv",
+			"courses_avg": 80.17
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "455",
+			"courses_instructor": "",
+			"courses_avg": 80.17
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "vaney, michael",
+			"courses_avg": 80.18
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "296",
+			"courses_instructor": "jiang, lai",
+			"courses_avg": 80.18
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "295",
+			"courses_instructor": "vercammen, james",
+			"courses_avg": 80.18
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "202",
+			"courses_instructor": "watson, michelle",
+			"courses_avg": 80.18
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "401",
+			"courses_instructor": "",
+			"courses_avg": 80.18
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "487",
+			"courses_instructor": "",
+			"courses_avg": 80.19
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "487",
+			"courses_instructor": "antweiler, werner",
+			"courses_avg": 80.19
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "202",
+			"courses_instructor": "gully, linda;watson, michelle",
+			"courses_avg": 80.19
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "371",
+			"courses_instructor": "skoulakis, georgios",
+			"courses_avg": 80.21
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "325",
+			"courses_instructor": "whistler, diana",
+			"courses_avg": 80.22
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "",
+			"courses_avg": 80.24
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "477",
+			"courses_instructor": "garlappi, lorenzo",
+			"courses_avg": 80.24
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "363",
+			"courses_instructor": "zhu, ting",
+			"courses_avg": 80.24
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "557",
+			"courses_instructor": "",
+			"courses_avg": 80.25
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "557",
+			"courses_instructor": "swiecki, tomasz",
+			"courses_avg": 80.25
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "459",
+			"courses_instructor": "",
+			"courses_avg": 80.25
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "446",
+			"courses_instructor": "",
+			"courses_avg": 80.25
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "446",
+			"courses_instructor": "lindsey, charles",
+			"courses_avg": 80.25
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "436",
+			"courses_instructor": "woo, carson c",
+			"courses_avg": 80.25
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "482",
+			"courses_instructor": "silk, timothy",
+			"courses_avg": 80.26
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "471",
+			"courses_instructor": "moran-villar, pablo christian",
+			"courses_avg": 80.26
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "377",
+			"courses_instructor": "bhamra, harjoat",
+			"courses_avg": 80.26
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "405",
+			"courses_instructor": "",
+			"courses_avg": 80.26
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "405",
+			"courses_instructor": "bentall, david",
+			"courses_avg": 80.26
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "453",
+			"courses_instructor": "campbell, chuck",
+			"courses_avg": 80.27
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "562",
+			"courses_instructor": "",
+			"courses_avg": 80.28
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "562",
+			"courses_instructor": "milligan, kevin",
+			"courses_avg": 80.28
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "556",
+			"courses_instructor": "",
+			"courses_avg": 80.28
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "556",
+			"courses_instructor": "lahiri, amartya",
+			"courses_avg": 80.28
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "kong, wai-ching alfred",
+			"courses_avg": 80.28
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "502",
+			"courses_instructor": "",
+			"courses_avg": 80.29
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "502",
+			"courses_instructor": "hnatkovska, viktoriya",
+			"courses_avg": 80.29
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "oprea, ryan",
+			"courses_avg": 80.29
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "465",
+			"courses_instructor": "stone, ann",
+			"courses_avg": 80.29
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "390",
+			"courses_instructor": "bowker, elizabeth;levine, danielle",
+			"courses_avg": 80.29
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "402",
+			"courses_instructor": "",
+			"courses_avg": 80.29
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "402",
+			"courses_instructor": "berdahl, jennifer",
+			"courses_avg": 80.29
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "471",
+			"courses_instructor": "",
+			"courses_avg": 80.3
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "438",
+			"courses_instructor": "cavusoglu, hasan",
+			"courses_avg": 80.3
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "390",
+			"courses_instructor": "sutherland, brian",
+			"courses_avg": 80.3
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "388",
+			"courses_instructor": "",
+			"courses_avg": 80.31
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "471",
+			"courses_instructor": "",
+			"courses_avg": 80.32
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "468",
+			"courses_instructor": "",
+			"courses_avg": 80.32
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "467",
+			"courses_instructor": "silk, timothy",
+			"courses_avg": 80.32
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "412",
+			"courses_instructor": "granot, daniel",
+			"courses_avg": 80.32
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "354",
+			"courses_instructor": "dorfmann, william",
+			"courses_avg": 80.32
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "335",
+			"courses_instructor": "cheung, yau man",
+			"courses_avg": 80.33
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "450",
+			"courses_instructor": "jackes, robert",
+			"courses_avg": 80.34
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "371",
+			"courses_instructor": "",
+			"courses_avg": 80.34
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "482",
+			"courses_instructor": "silk, timothy",
+			"courses_avg": 80.35
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "628",
+			"courses_instructor": "",
+			"courses_avg": 80.36
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "628",
+			"courses_instructor": "kasahara, hiroyuki",
+			"courses_avg": 80.36
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "407",
+			"courses_instructor": "",
+			"courses_avg": 80.36
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "407",
+			"courses_instructor": "newman, geoffrey",
+			"courses_avg": 80.36
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "495",
+			"courses_instructor": "",
+			"courses_avg": 80.36
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "495",
+			"courses_instructor": "nemetz, peter",
+			"courses_avg": 80.36
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "471",
+			"courses_instructor": "fisher, adlai",
+			"courses_avg": 80.36
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "405",
+			"courses_instructor": "davidoff, thomas;somerville, craig tsuriel",
+			"courses_avg": 80.36
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "370",
+			"courses_instructor": "freedman, ruth",
+			"courses_avg": 80.36
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "296",
+			"courses_instructor": "jiang, lai",
+			"courses_avg": 80.36
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "398",
+			"courses_instructor": "",
+			"courses_avg": 80.37
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "475",
+			"courses_instructor": "heinkel, robert lee",
+			"courses_avg": 80.38
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "436",
+			"courses_instructor": "woo, carson c",
+			"courses_avg": 80.38
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "300",
+			"courses_instructor": "danielson, peter",
+			"courses_avg": 80.38
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "kong, wai-ching alfred",
+			"courses_avg": 80.39
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "lahiri, amartya",
+			"courses_avg": 80.39
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "malhotra, nisha",
+			"courses_avg": 80.39
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "465",
+			"courses_instructor": "stone, ann",
+			"courses_avg": 80.39
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "290",
+			"courses_instructor": "das, anupam",
+			"courses_avg": 80.39
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "451",
+			"courses_instructor": "",
+			"courses_avg": 80.4
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "451",
+			"courses_instructor": "lavallee, susanne",
+			"courses_avg": 80.4
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "491",
+			"courses_instructor": "parra perez, alvaro",
+			"courses_avg": 80.4
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "471",
+			"courses_instructor": "dimitrova, milka",
+			"courses_avg": 80.4
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "467",
+			"courses_instructor": "",
+			"courses_avg": 80.4
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "455",
+			"courses_instructor": "chong, mary",
+			"courses_avg": 80.4
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "335",
+			"courses_instructor": "",
+			"courses_avg": 80.4
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "335",
+			"courses_instructor": "",
+			"courses_avg": 80.42
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "307",
+			"courses_instructor": "monroe, mark",
+			"courses_avg": 80.43
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "green, david",
+			"courses_avg": 80.44
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "462",
+			"courses_instructor": "cubbon, paul",
+			"courses_avg": 80.45
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "412",
+			"courses_instructor": "granot, daniel",
+			"courses_avg": 80.45
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "498",
+			"courses_instructor": "nakamura, masao",
+			"courses_avg": 80.46
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "464",
+			"courses_instructor": "cubbon, paul",
+			"courses_avg": 80.46
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "462",
+			"courses_instructor": "stone, ann",
+			"courses_avg": 80.47
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "398",
+			"courses_instructor": "graystone, brian",
+			"courses_avg": 80.47
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "390",
+			"courses_instructor": "duzy, barbara",
+			"courses_avg": 80.47
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "408",
+			"courses_instructor": "",
+			"courses_avg": 80.48
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "408",
+			"courses_instructor": "wosk, larry",
+			"courses_avg": 80.48
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "205",
+			"courses_instructor": "aleem, muhammad usman",
+			"courses_avg": 80.48
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "204",
+			"courses_instructor": "ding, yichuan",
+			"courses_avg": 80.48
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "301",
+			"courses_instructor": "",
+			"courses_avg": 80.48
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "301",
+			"courses_instructor": "culham, thomas",
+			"courses_avg": 80.48
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "474",
+			"courses_instructor": "heinkel, robert lee",
+			"courses_avg": 80.5
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "377",
+			"courses_instructor": "bhamra, harjoat",
+			"courses_avg": 80.51
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "444",
+			"courses_instructor": "",
+			"courses_avg": 80.52
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "335",
+			"courses_instructor": "cheung, yau man",
+			"courses_avg": 80.52
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "halevy, yoram",
+			"courses_avg": 80.53
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "335",
+			"courses_instructor": "",
+			"courses_avg": 80.53
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "335",
+			"courses_instructor": "douglas, catherine",
+			"courses_avg": 80.53
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "468",
+			"courses_instructor": "bhardwaj, pradeep",
+			"courses_avg": 80.53
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "468",
+			"courses_instructor": "dickson, jenny",
+			"courses_avg": 80.53
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "466",
+			"courses_instructor": "",
+			"courses_avg": 80.53
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "466",
+			"courses_instructor": "cubbon, paul;dahl, darren",
+			"courses_avg": 80.53
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "464",
+			"courses_instructor": "cubbon, paul;viskovich, julio",
+			"courses_avg": 80.53
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "395",
+			"courses_instructor": "bowker, elizabeth",
+			"courses_avg": 80.53
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "502",
+			"courses_instructor": "",
+			"courses_avg": 80.54
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "502",
+			"courses_instructor": "redish, angela",
+			"courses_avg": 80.54
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "465",
+			"courses_instructor": "liang, yitian",
+			"courses_avg": 80.54
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "296",
+			"courses_instructor": "jiang, lai",
+			"courses_avg": 80.54
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "412",
+			"courses_instructor": "",
+			"courses_avg": 80.55
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "390",
+			"courses_instructor": "bowker, elizabeth",
+			"courses_avg": 80.55
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "298",
+			"courses_instructor": "zeng, lulu",
+			"courses_avg": 80.55
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "whistler, diana",
+			"courses_avg": 80.56
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "milligan, kevin",
+			"courses_avg": 80.56
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "362",
+			"courses_instructor": "varey, carol ann",
+			"courses_avg": 80.56
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "388",
+			"courses_instructor": "thiruchittampalam, dharini",
+			"courses_avg": 80.57
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "371",
+			"courses_instructor": "kung, howard",
+			"courses_avg": 80.57
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "narayan, chandan",
+			"courses_avg": 80.58
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "465",
+			"courses_instructor": "basto da silva, rui jorge",
+			"courses_avg": 80.59
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "462",
+			"courses_instructor": "cubbon, paul",
+			"courses_avg": 80.59
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "436",
+			"courses_instructor": "woo, carson c",
+			"courses_avg": 80.59
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "493",
+			"courses_instructor": "raina, rajinder",
+			"courses_avg": 80.6
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "458",
+			"courses_instructor": "",
+			"courses_avg": 80.6
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "458",
+			"courses_instructor": "mallia, patricia",
+			"courses_avg": 80.6
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "390",
+			"courses_instructor": "furlong, carla",
+			"courses_avg": 80.6
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "408",
+			"courses_instructor": "",
+			"courses_avg": 80.6
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "408",
+			"courses_instructor": "",
+			"courses_avg": 80.6
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "471",
+			"courses_instructor": "",
+			"courses_avg": 80.62
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "565",
+			"courses_instructor": "",
+			"courses_avg": 80.63
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "565",
+			"courses_instructor": "winter, ralph",
+			"courses_avg": 80.63
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "455",
+			"courses_instructor": "simunic, dan",
+			"courses_avg": 80.63
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "412",
+			"courses_instructor": "granot, daniel",
+			"courses_avg": 80.63
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "kong, wai-ching alfred",
+			"courses_avg": 80.64
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "581",
+			"courses_instructor": "",
+			"courses_avg": 80.64
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "581",
+			"courses_instructor": "essak, martha",
+			"courses_avg": 80.64
+		},
+		{
+			"courses_dept": "coec",
+			"courses_id": "298",
+			"courses_instructor": "degraaf, darren",
+			"courses_avg": 80.64
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "460",
+			"courses_instructor": "",
+			"courses_avg": 80.66
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "460",
+			"courses_instructor": "hoffmann, florian",
+			"courses_avg": 80.66
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "milligan, kevin",
+			"courses_avg": 80.67
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "milligan, kevin",
+			"courses_avg": 80.68
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "464",
+			"courses_instructor": "cubbon, paul",
+			"courses_avg": 80.68
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "455",
+			"courses_instructor": "simunic, dan",
+			"courses_avg": 80.68
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "374",
+			"courses_instructor": "pflueger, carolin",
+			"courses_avg": 80.68
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "467",
+			"courses_instructor": "",
+			"courses_avg": 80.69
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "306",
+			"courses_instructor": "",
+			"courses_avg": 80.7
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "306",
+			"courses_instructor": "yilankaya, okan",
+			"courses_avg": 80.7
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "304",
+			"courses_instructor": "",
+			"courses_avg": 80.7
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "304",
+			"courses_instructor": "knight, thomas",
+			"courses_avg": 80.7
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "300",
+			"courses_instructor": "danielson, peter",
+			"courses_avg": 80.7
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "374",
+			"courses_instructor": "",
+			"courses_avg": 80.71
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "374",
+			"courses_instructor": "gulati, sumeet",
+			"courses_avg": 80.71
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "390",
+			"courses_instructor": "sutherland, brian",
+			"courses_avg": 80.71
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "song, unjy",
+			"courses_avg": 80.72
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "452",
+			"courses_instructor": "",
+			"courses_avg": 80.72
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "452",
+			"courses_instructor": "gergel, sarah",
+			"courses_avg": 80.72
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "453",
+			"courses_instructor": "campbell, chuck",
+			"courses_avg": 80.72
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "390",
+			"courses_instructor": "sutherland, brian",
+			"courses_avg": 80.72
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "354",
+			"courses_instructor": "chamberlain, sandra",
+			"courses_avg": 80.72
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "464",
+			"courses_instructor": "",
+			"courses_avg": 80.73
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "436",
+			"courses_instructor": "",
+			"courses_avg": 80.73
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "204",
+			"courses_instructor": "ding, yichuan",
+			"courses_avg": 80.73
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "464",
+			"courses_instructor": "cubbon, paul",
+			"courses_avg": 80.74
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "390",
+			"courses_instructor": "fajardo, frederick",
+			"courses_avg": 80.74
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "404",
+			"courses_instructor": "",
+			"courses_avg": 80.74
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "404",
+			"courses_instructor": "o'reilly, deborah jane",
+			"courses_avg": 80.74
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "335",
+			"courses_instructor": "",
+			"courses_avg": 80.75
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "335",
+			"courses_instructor": "cheung, yau man",
+			"courses_avg": 80.75
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "",
+			"courses_avg": 80.76
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "398",
+			"courses_instructor": "gillen, david",
+			"courses_avg": 80.77
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "307",
+			"courses_instructor": "",
+			"courses_avg": 80.78
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "307",
+			"courses_instructor": "gallipoli, giovanni",
+			"courses_avg": 80.78
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "398",
+			"courses_instructor": "zhang, anming",
+			"courses_avg": 80.78
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "474",
+			"courses_instructor": "heinkel, robert lee",
+			"courses_avg": 80.79
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "412",
+			"courses_instructor": "granot, daniel",
+			"courses_avg": 80.79
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "388",
+			"courses_instructor": "quayle, moura",
+			"courses_avg": 80.79
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "550",
+			"courses_instructor": "",
+			"courses_avg": 80.8
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "550",
+			"courses_instructor": "rehavi, michal",
+			"courses_avg": 80.8
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "390",
+			"courses_instructor": "furlong, carla",
+			"courses_avg": 80.8
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "447",
+			"courses_instructor": "",
+			"courses_avg": 80.81
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "447",
+			"courses_instructor": "goatham, robert",
+			"courses_avg": 80.81
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "370",
+			"courses_instructor": "zeng, lulu",
+			"courses_avg": 80.81
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "474",
+			"courses_instructor": "heinkel, robert lee",
+			"courses_avg": 80.82
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "514",
+			"courses_instructor": "",
+			"courses_avg": 80.83
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "514",
+			"courses_instructor": "celik, gorkem",
+			"courses_avg": 80.83
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "whistler, diana",
+			"courses_avg": 80.85
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "474",
+			"courses_instructor": "heinkel, robert lee",
+			"courses_avg": 80.85
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "471",
+			"courses_instructor": "fisher, adlai",
+			"courses_avg": 80.85
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "464",
+			"courses_instructor": "",
+			"courses_avg": 80.85
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "464",
+			"courses_instructor": "",
+			"courses_avg": 80.86
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "425",
+			"courses_instructor": "",
+			"courses_avg": 80.87
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "425",
+			"courses_instructor": "song, kyungchul",
+			"courses_avg": 80.87
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "474",
+			"courses_instructor": "",
+			"courses_avg": 80.87
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "474",
+			"courses_instructor": "heinkel, robert lee",
+			"courses_avg": 80.87
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "whistler, diana",
+			"courses_avg": 80.9
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "412",
+			"courses_instructor": "granot, daniel",
+			"courses_avg": 80.9
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "407",
+			"courses_instructor": "lee, sanghoon",
+			"courses_avg": 80.9
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "362",
+			"courses_instructor": "hardisty, david",
+			"courses_avg": 80.9
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "370",
+			"courses_instructor": "freedman, ruth",
+			"courses_avg": 80.91
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "467",
+			"courses_instructor": "silk, timothy",
+			"courses_avg": 80.93
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "461",
+			"courses_instructor": "",
+			"courses_avg": 80.93
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "461",
+			"courses_instructor": "gardiner, daniel f",
+			"courses_avg": 80.93
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "362",
+			"courses_instructor": "varey, carol ann",
+			"courses_avg": 80.93
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "malhotra, nisha",
+			"courses_avg": 80.94
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "475",
+			"courses_instructor": "heinkel, robert lee",
+			"courses_avg": 80.94
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "407",
+			"courses_instructor": "schiff, nathan",
+			"courses_avg": 80.94
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "390",
+			"courses_instructor": "morrell, cameron",
+			"courses_avg": 80.94
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "411",
+			"courses_instructor": "",
+			"courses_avg": 80.94
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "411",
+			"courses_instructor": "gurton, tracey",
+			"courses_avg": 80.94
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "475",
+			"courses_instructor": "freedman, ruth",
+			"courses_avg": 80.95
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "464",
+			"courses_instructor": "cubbon, paul",
+			"courses_avg": 80.96
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "477",
+			"courses_instructor": "garlappi, lorenzo",
+			"courses_avg": 80.97
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "462",
+			"courses_instructor": "",
+			"courses_avg": 80.97
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "412",
+			"courses_instructor": "granot, daniel",
+			"courses_avg": 80.97
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "362",
+			"courses_instructor": "varey, carol ann",
+			"courses_avg": 80.97
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "326",
+			"courses_instructor": "",
+			"courses_avg": 80.98
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "450",
+			"courses_instructor": "campbell, chuck",
+			"courses_avg": 80.98
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "412",
+			"courses_instructor": "",
+			"courses_avg": 80.98
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "296",
+			"courses_instructor": "jiang, lai",
+			"courses_avg": 80.98
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "557",
+			"courses_instructor": "",
+			"courses_avg": 81
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "557",
+			"courses_instructor": "head, c keith",
+			"courses_avg": 81
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "550",
+			"courses_instructor": "",
+			"courses_avg": 81
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "550",
+			"courses_instructor": "rehavi, michal",
+			"courses_avg": 81
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "544",
+			"courses_instructor": "",
+			"courses_avg": 81
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "544",
+			"courses_instructor": "trebbi, francesco",
+			"courses_avg": 81
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "drelichman, mauricio",
+			"courses_avg": 81
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "oprea, ryan",
+			"courses_avg": 81
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "green, david",
+			"courses_avg": 81
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "412",
+			"courses_instructor": "",
+			"courses_avg": 81
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "388",
+			"courses_instructor": "beausoleil, angele",
+			"courses_avg": 81
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "374",
+			"courses_instructor": "",
+			"courses_avg": 81.01
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "374",
+			"courses_instructor": "gulati, sumeet",
+			"courses_avg": 81.01
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "377",
+			"courses_instructor": "levi, maurice david",
+			"courses_avg": 81.02
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "562",
+			"courses_instructor": "",
+			"courses_avg": 81.03
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "562",
+			"courses_instructor": "chemin, matthieu",
+			"courses_avg": 81.03
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "412",
+			"courses_instructor": "granot, daniel",
+			"courses_avg": 81.03
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "388",
+			"courses_instructor": "",
+			"courses_avg": 81.03
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "562",
+			"courses_instructor": "",
+			"courses_avg": 81.04
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "562",
+			"courses_instructor": "gottlieb, joshua",
+			"courses_avg": 81.04
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "304",
+			"courses_instructor": "",
+			"courses_avg": 81.04
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "304",
+			"courses_instructor": "",
+			"courses_avg": 81.04
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "whistler, diana",
+			"courses_avg": 81.05
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "526",
+			"courses_instructor": "",
+			"courses_avg": 81.06
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "526",
+			"courses_instructor": "",
+			"courses_avg": 81.06
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "431",
+			"courses_instructor": "",
+			"courses_avg": 81.06
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "431",
+			"courses_instructor": "mcintosh, ellen jane",
+			"courses_avg": 81.06
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "412",
+			"courses_instructor": "granot, daniel",
+			"courses_avg": 81.06
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "475",
+			"courses_instructor": "",
+			"courses_avg": 81.08
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "475",
+			"courses_instructor": "heinkel, robert lee",
+			"courses_avg": 81.08
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "",
+			"courses_avg": 81.08
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "600",
+			"courses_instructor": "",
+			"courses_avg": 81.1
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "600",
+			"courses_instructor": "peters, michael",
+			"courses_avg": 81.1
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "455",
+			"courses_instructor": "simunic, dan",
+			"courses_avg": 81.1
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "390",
+			"courses_instructor": "bowker, elizabeth",
+			"courses_avg": 81.1
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "szkup, michal",
+			"courses_avg": 81.11
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "441",
+			"courses_instructor": "gillen, david",
+			"courses_avg": 81.11
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "377",
+			"courses_instructor": "bhamra, harjoat",
+			"courses_avg": 81.11
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "556",
+			"courses_instructor": "",
+			"courses_avg": 81.13
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "556",
+			"courses_instructor": "lahiri, amartya",
+			"courses_avg": 81.13
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "395",
+			"courses_instructor": "bowker, elizabeth",
+			"courses_avg": 81.13
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "487",
+			"courses_instructor": "",
+			"courses_avg": 81.14
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "487",
+			"courses_instructor": "antweiler, werner",
+			"courses_avg": 81.14
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "474",
+			"courses_instructor": "",
+			"courses_avg": 81.14
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "377",
+			"courses_instructor": "lazrak, ali",
+			"courses_avg": 81.14
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "370",
+			"courses_instructor": "",
+			"courses_avg": 81.18
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "370",
+			"courses_instructor": "lyall, andrea",
+			"courses_avg": 81.18
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "487",
+			"courses_instructor": "",
+			"courses_avg": 81.18
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "487",
+			"courses_instructor": "antweiler, werner",
+			"courses_avg": 81.18
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "464",
+			"courses_instructor": "cubbon, paul;viskovich, julio",
+			"courses_avg": 81.2
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "300",
+			"courses_instructor": "",
+			"courses_avg": 81.2
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "402",
+			"courses_instructor": "",
+			"courses_avg": 81.21
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "402",
+			"courses_instructor": "gurton, tracey",
+			"courses_avg": 81.21
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "393",
+			"courses_instructor": "mcintosh, ellen jane",
+			"courses_avg": 81.24
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "371",
+			"courses_instructor": "baldauf, markus",
+			"courses_avg": 81.24
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "660",
+			"courses_instructor": "",
+			"courses_avg": 81.25
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "660",
+			"courses_instructor": "weinberg, charles",
+			"courses_avg": 81.25
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "390",
+			"courses_instructor": "furlong, carla",
+			"courses_avg": 81.25
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "371",
+			"courses_instructor": "pikulina, elena",
+			"courses_avg": 81.26
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "556",
+			"courses_instructor": "",
+			"courses_avg": 81.27
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "556",
+			"courses_instructor": "pastine, ivan",
+			"courses_avg": 81.27
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "390",
+			"courses_instructor": "fajardo, frederick",
+			"courses_avg": 81.28
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "561",
+			"courses_instructor": "",
+			"courses_avg": 81.29
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "561",
+			"courses_instructor": "fortin, nicole",
+			"courses_avg": 81.29
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "whistler, diana",
+			"courses_avg": 81.29
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "302",
+			"courses_instructor": "",
+			"courses_avg": 81.29
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "302",
+			"courses_instructor": "ritland, kermit",
+			"courses_avg": 81.29
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "449",
+			"courses_instructor": "chow, garland",
+			"courses_avg": 81.29
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "412",
+			"courses_instructor": "granot, frieda",
+			"courses_avg": 81.29
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "394",
+			"courses_instructor": "lindsey, charles",
+			"courses_avg": 81.29
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "malhotra, nisha",
+			"courses_avg": 81.3
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "502",
+			"courses_instructor": "",
+			"courses_avg": 81.32
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "502",
+			"courses_instructor": "lahiri, amartya",
+			"courses_avg": 81.32
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "449",
+			"courses_instructor": "graystone, brian",
+			"courses_avg": 81.32
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "455",
+			"courses_instructor": "",
+			"courses_avg": 81.33
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "455",
+			"courses_instructor": "malhotra, nisha",
+			"courses_avg": 81.33
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "466",
+			"courses_instructor": "",
+			"courses_avg": 81.33
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "466",
+			"courses_instructor": "cubbon, paul;simonite, james",
+			"courses_avg": 81.33
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "298",
+			"courses_instructor": "zeng, lulu",
+			"courses_avg": 81.33
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "453",
+			"courses_instructor": "campbell, chuck",
+			"courses_avg": 81.36
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "321",
+			"courses_instructor": "muehlchen, elizabeth",
+			"courses_avg": 81.38
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "398",
+			"courses_instructor": "",
+			"courses_avg": 81.39
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "531",
+			"courses_instructor": "",
+			"courses_avg": 81.4
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "531",
+			"courses_instructor": "drelichman, mauricio",
+			"courses_avg": 81.4
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "408",
+			"courses_instructor": "",
+			"courses_avg": 81.41
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "408",
+			"courses_instructor": "monroe, mark",
+			"courses_avg": 81.41
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "halevy, yoram",
+			"courses_avg": 81.42
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "374",
+			"courses_instructor": "",
+			"courses_avg": 81.42
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "374",
+			"courses_instructor": "gulati, sumeet",
+			"courses_avg": 81.42
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "304",
+			"courses_instructor": "",
+			"courses_avg": 81.42
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "304",
+			"courses_instructor": "",
+			"courses_avg": 81.42
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "101",
+			"courses_instructor": "",
+			"courses_avg": 81.42
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "101",
+			"courses_instructor": "carroll, allan",
+			"courses_avg": 81.42
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "464",
+			"courses_instructor": "surjanovic, ivan",
+			"courses_avg": 81.42
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "447",
+			"courses_instructor": "",
+			"courses_avg": 81.42
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "447",
+			"courses_instructor": "gillen, david",
+			"courses_avg": 81.42
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "311",
+			"courses_instructor": "",
+			"courses_avg": 81.42
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "311",
+			"courses_instructor": "seidel, marc-david",
+			"courses_avg": 81.42
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "471",
+			"courses_instructor": "li, kai",
+			"courses_avg": 81.43
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "374",
+			"courses_instructor": "pflueger, carolin",
+			"courses_avg": 81.43
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "307",
+			"courses_instructor": "",
+			"courses_avg": 81.43
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "550",
+			"courses_instructor": "",
+			"courses_avg": 81.44
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "550",
+			"courses_instructor": "rehavi, michal",
+			"courses_avg": 81.44
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "neary, hugh",
+			"courses_avg": 81.44
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "malhotra, nisha",
+			"courses_avg": 81.44
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "466",
+			"courses_instructor": "",
+			"courses_avg": 81.44
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "466",
+			"courses_instructor": "cubbon, paul;dahl, darren",
+			"courses_avg": 81.44
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "453",
+			"courses_instructor": "campbell, chuck",
+			"courses_avg": 81.44
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "388",
+			"courses_instructor": "",
+			"courses_avg": 81.44
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "401",
+			"courses_instructor": "vatikiotis-bateson, eric",
+			"courses_avg": 81.44
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "406",
+			"courses_instructor": "",
+			"courses_avg": 81.45
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "406",
+			"courses_instructor": "graves, jonathan",
+			"courses_avg": 81.45
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "474",
+			"courses_instructor": "heinkel, robert lee",
+			"courses_avg": 81.45
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "390",
+			"courses_instructor": "sutherland, brian",
+			"courses_avg": 81.45
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "whistler, diana",
+			"courses_avg": 81.47
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "halevy, yoram",
+			"courses_avg": 81.47
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "390",
+			"courses_instructor": "bowker, elizabeth",
+			"courses_avg": 81.47
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "462",
+			"courses_instructor": "cubbon, paul",
+			"courses_avg": 81.48
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "290",
+			"courses_instructor": "",
+			"courses_avg": 81.48
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "502",
+			"courses_instructor": "",
+			"courses_avg": 81.49
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "502",
+			"courses_instructor": "",
+			"courses_avg": 81.49
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "205",
+			"courses_instructor": "cheung, yau man;saunders, adam",
+			"courses_avg": 81.49
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "411",
+			"courses_instructor": "",
+			"courses_avg": 81.49
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "411",
+			"courses_instructor": "gurton, tracey",
+			"courses_avg": 81.49
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "560",
+			"courses_instructor": "",
+			"courses_avg": 81.5
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "560",
+			"courses_instructor": "fortin, nicole",
+			"courses_avg": 81.5
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "541",
+			"courses_instructor": "",
+			"courses_avg": 81.5
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "541",
+			"courses_instructor": "francois, patrick",
+			"courses_avg": 81.5
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "444",
+			"courses_instructor": "gillen, david",
+			"courses_avg": 81.5
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "307",
+			"courses_instructor": "",
+			"courses_avg": 81.53
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "307",
+			"courses_instructor": "gallipoli, giovanni",
+			"courses_avg": 81.53
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "431",
+			"courses_instructor": "",
+			"courses_avg": 81.53
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "431",
+			"courses_instructor": "mcintosh, ellen jane",
+			"courses_avg": 81.53
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "389",
+			"courses_instructor": "",
+			"courses_avg": 81.53
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "389",
+			"courses_instructor": "southcott, james",
+			"courses_avg": 81.53
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "388",
+			"courses_instructor": "beausoleil, angele",
+			"courses_avg": 81.53
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "477",
+			"courses_instructor": "wang, tan",
+			"courses_avg": 81.54
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "431",
+			"courses_instructor": "",
+			"courses_avg": 81.54
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "",
+			"courses_avg": 81.55
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "475",
+			"courses_instructor": "heinkel, robert lee",
+			"courses_avg": 81.55
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "437",
+			"courses_instructor": "",
+			"courses_avg": 81.55
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "390",
+			"courses_instructor": "sutherland, brian",
+			"courses_avg": 81.55
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "433",
+			"courses_instructor": "",
+			"courses_avg": 81.55
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "433",
+			"courses_instructor": "mcintosh, ellen jane",
+			"courses_avg": 81.55
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "milligan, kevin",
+			"courses_avg": 81.56
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "326",
+			"courses_instructor": "marmer, vadim",
+			"courses_avg": 81.57
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "471",
+			"courses_instructor": "li, kai",
+			"courses_avg": 81.57
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "363",
+			"courses_instructor": "zhu, ting",
+			"courses_avg": 81.57
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "471",
+			"courses_instructor": "",
+			"courses_avg": 81.58
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "447",
+			"courses_instructor": "",
+			"courses_avg": 81.58
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "447",
+			"courses_instructor": "goatham, robert",
+			"courses_avg": 81.58
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "205",
+			"courses_instructor": "aleem, muhammad usman",
+			"courses_avg": 81.58
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "374",
+			"courses_instructor": "valdivieso contreras, ercos",
+			"courses_avg": 81.59
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "300",
+			"courses_instructor": "danielson, peter",
+			"courses_avg": 81.61
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "green, david",
+			"courses_avg": 81.63
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "szkup, michal",
+			"courses_avg": 81.63
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "601",
+			"courses_instructor": "",
+			"courses_avg": 81.64
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "601",
+			"courses_instructor": "severinov, sergei",
+			"courses_avg": 81.64
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "457",
+			"courses_instructor": "",
+			"courses_avg": 81.64
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "457",
+			"courses_instructor": "kotwal, ashok",
+			"courses_avg": 81.64
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "468",
+			"courses_instructor": "tatla, parmjit",
+			"courses_avg": 81.66
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "453",
+			"courses_instructor": "campbell, chuck",
+			"courses_avg": 81.67
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "306",
+			"courses_instructor": "",
+			"courses_avg": 81.68
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "306",
+			"courses_instructor": "persitz, dotan",
+			"courses_avg": 81.68
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "388",
+			"courses_instructor": "quayle, moura",
+			"courses_avg": 81.68
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "202",
+			"courses_instructor": "watson, michelle",
+			"courses_avg": 81.69
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "566",
+			"courses_instructor": "",
+			"courses_avg": 81.7
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "566",
+			"courses_instructor": "ross, thomas",
+			"courses_avg": 81.7
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "471",
+			"courses_instructor": "li, kai",
+			"courses_avg": 81.71
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "song, unjy",
+			"courses_avg": 81.72
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "471",
+			"courses_instructor": "li, kai",
+			"courses_avg": 81.74
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "480",
+			"courses_instructor": "",
+			"courses_avg": 81.75
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "480",
+			"courses_instructor": "",
+			"courses_avg": 81.75
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "321",
+			"courses_instructor": "",
+			"courses_avg": 81.75
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "321",
+			"courses_instructor": "muehlchen, elizabeth",
+			"courses_avg": 81.75
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "452",
+			"courses_instructor": "",
+			"courses_avg": 81.76
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "452",
+			"courses_instructor": "lavallee, susanne",
+			"courses_avg": 81.76
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "467",
+			"courses_instructor": "silk, timothy",
+			"courses_avg": 81.76
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "436",
+			"courses_instructor": "",
+			"courses_avg": 81.76
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "412",
+			"courses_instructor": "granot, daniel",
+			"courses_avg": 81.77
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "371",
+			"courses_instructor": "chen, jason",
+			"courses_avg": 81.78
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "459",
+			"courses_instructor": "begley, joy",
+			"courses_avg": 81.79
+		},
+		{
+			"courses_dept": "coec",
+			"courses_id": "371",
+			"courses_instructor": "skoulakis, georgios",
+			"courses_avg": 81.79
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "573",
+			"courses_instructor": "",
+			"courses_avg": 81.8
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "573",
+			"courses_instructor": "copeland, brian",
+			"courses_avg": 81.8
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "447",
+			"courses_instructor": "",
+			"courses_avg": 81.8
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "447",
+			"courses_instructor": "goatham, robert",
+			"courses_avg": 81.8
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "",
+			"courses_avg": 81.81
+		},
+		{
+			"courses_dept": "coec",
+			"courses_id": "298",
+			"courses_instructor": "",
+			"courses_avg": 81.81
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "304",
+			"courses_instructor": "",
+			"courses_avg": 81.82
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "304",
+			"courses_instructor": "persitz, dotan",
+			"courses_avg": 81.82
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "374",
+			"courses_instructor": "carlson, murray",
+			"courses_avg": 81.82
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "452",
+			"courses_instructor": "",
+			"courses_avg": 81.83
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "452",
+			"courses_instructor": "gergel, sarah",
+			"courses_avg": 81.83
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "412",
+			"courses_instructor": "",
+			"courses_avg": 81.83
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "326",
+			"courses_instructor": "",
+			"courses_avg": 81.84
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "335",
+			"courses_instructor": "",
+			"courses_avg": 81.84
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "455",
+			"courses_instructor": "simunic, dan",
+			"courses_avg": 81.85
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "471",
+			"courses_instructor": "",
+			"courses_avg": 81.86
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "602",
+			"courses_instructor": "",
+			"courses_avg": 81.88
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "602",
+			"courses_instructor": "",
+			"courses_avg": 81.88
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "412",
+			"courses_instructor": "granot, daniel",
+			"courses_avg": 81.88
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "442",
+			"courses_instructor": "",
+			"courses_avg": 81.89
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "442",
+			"courses_instructor": "",
+			"courses_avg": 81.89
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "467",
+			"courses_instructor": "silk, timothy",
+			"courses_avg": 81.89
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "387",
+			"courses_instructor": "",
+			"courses_avg": 81.9
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "387",
+			"courses_instructor": "vo, dan hieu",
+			"courses_avg": 81.9
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "298",
+			"courses_instructor": "degraaf, darren",
+			"courses_avg": 81.9
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "566",
+			"courses_instructor": "",
+			"courses_avg": 81.92
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "566",
+			"courses_instructor": "winter, ralph",
+			"courses_avg": 81.92
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "451",
+			"courses_instructor": "",
+			"courses_avg": 81.92
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "451",
+			"courses_instructor": "aitken, sally;hinch, scott;lavallee, susanne",
+			"courses_avg": 81.92
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "335",
+			"courses_instructor": "",
+			"courses_avg": 81.92
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "306",
+			"courses_instructor": "",
+			"courses_avg": 81.93
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "306",
+			"courses_instructor": "peters, michael",
+			"courses_avg": 81.93
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "439",
+			"courses_instructor": "",
+			"courses_avg": 81.93
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "439",
+			"courses_instructor": "cheung, yau man",
+			"courses_avg": 81.93
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "439",
+			"courses_instructor": "cheung, yau man",
+			"courses_avg": 81.93
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "526",
+			"courses_instructor": "",
+			"courses_avg": 81.94
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "526",
+			"courses_instructor": "inoue, atsushi",
+			"courses_avg": 81.94
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "471",
+			"courses_instructor": "li, kai",
+			"courses_avg": 81.94
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "song, unjy",
+			"courses_avg": 81.95
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "fortin, nicole",
+			"courses_avg": 81.95
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "695",
+			"courses_instructor": "",
+			"courses_avg": 81.95
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "695",
+			"courses_instructor": "carlson, murray;fisher, adlai",
+			"courses_avg": 81.95
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "398",
+			"courses_instructor": "graystone, brian",
+			"courses_avg": 81.95
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "401",
+			"courses_instructor": "vatikiotis-bateson, eric;ward, lawrence",
+			"courses_avg": 81.96
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "557",
+			"courses_instructor": "",
+			"courses_avg": 82
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "557",
+			"courses_instructor": "swiecki, tomasz",
+			"courses_avg": 82
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "adshade, marina",
+			"courses_avg": 82
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "442",
+			"courses_instructor": "",
+			"courses_avg": 82
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "442",
+			"courses_instructor": "kotwal, ashok",
+			"courses_avg": 82
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "307",
+			"courses_instructor": "",
+			"courses_avg": 82
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "307",
+			"courses_instructor": "mcintyre, gerald",
+			"courses_avg": 82
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "437",
+			"courses_instructor": "",
+			"courses_avg": 82
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "437",
+			"courses_instructor": "tan, william",
+			"courses_avg": 82
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "311",
+			"courses_instructor": "",
+			"courses_avg": 82
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "311",
+			"courses_instructor": "robinson, sandra",
+			"courses_avg": 82
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "296",
+			"courses_instructor": "milne, tamar",
+			"courses_avg": 82
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "401",
+			"courses_instructor": "",
+			"courses_avg": 82
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "300",
+			"courses_instructor": "danielson, peter;de freitas, joao;mole, christopher",
+			"courses_avg": 82
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "335",
+			"courses_instructor": "cheung, yau man",
+			"courses_avg": 82.02
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "526",
+			"courses_instructor": "",
+			"courses_avg": 82.04
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "526",
+			"courses_instructor": "schrimpf, paul",
+			"courses_avg": 82.04
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "452",
+			"courses_instructor": "",
+			"courses_avg": 82.04
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "452",
+			"courses_instructor": "gergel, sarah",
+			"courses_avg": 82.04
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "412",
+			"courses_instructor": "",
+			"courses_avg": 82.04
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "546",
+			"courses_instructor": "",
+			"courses_avg": 82.05
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "546",
+			"courses_instructor": "devereux, michael;siu, henry",
+			"courses_avg": 82.05
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "388",
+			"courses_instructor": "beausoleil, angele;quayle, moura",
+			"courses_avg": 82.05
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "526",
+			"courses_instructor": "",
+			"courses_avg": 82.06
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "526",
+			"courses_instructor": "schrimpf, paul",
+			"courses_avg": 82.06
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "388",
+			"courses_instructor": "quayle, moura",
+			"courses_avg": 82.07
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "202",
+			"courses_instructor": "watson, michelle",
+			"courses_avg": 82.08
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "202",
+			"courses_instructor": "watson, michelle",
+			"courses_avg": 82.08
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "malhotra, nisha",
+			"courses_avg": 82.09
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "321",
+			"courses_instructor": "muehlchen, elizabeth",
+			"courses_avg": 82.09
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "401",
+			"courses_instructor": "",
+			"courses_avg": 82.12
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "401",
+			"courses_instructor": "seidel, marc-david",
+			"courses_avg": 82.12
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "581",
+			"courses_instructor": "",
+			"courses_avg": 82.13
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "581",
+			"courses_instructor": "zhang, zhe",
+			"courses_avg": 82.13
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "431",
+			"courses_instructor": "mcintosh, ellen jane",
+			"courses_avg": 82.13
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "306",
+			"courses_instructor": "",
+			"courses_avg": 82.14
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "306",
+			"courses_instructor": "peters, michael",
+			"courses_avg": 82.14
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "101",
+			"courses_instructor": "",
+			"courses_avg": 82.14
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "101",
+			"courses_instructor": "arcese, peter",
+			"courses_avg": 82.14
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "320",
+			"courses_instructor": "chung, tran khue",
+			"courses_avg": 82.14
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "672",
+			"courses_instructor": "",
+			"courses_avg": 82.15
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "672",
+			"courses_instructor": "carlson, murray;giammarino, ronald;heinkel, robert lee",
+			"courses_avg": 82.15
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "474",
+			"courses_instructor": "",
+			"courses_avg": 82.16
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "471",
+			"courses_instructor": "li, kai",
+			"courses_avg": 82.16
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "557",
+			"courses_instructor": "",
+			"courses_avg": 82.2
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "557",
+			"courses_instructor": "swiecki, tomasz",
+			"courses_avg": 82.2
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "500",
+			"courses_instructor": "",
+			"courses_avg": 82.2
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "500",
+			"courses_instructor": "halevy, yoram;peters, michael",
+			"courses_avg": 82.2
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "371",
+			"courses_instructor": "pikulina, elena",
+			"courses_avg": 82.21
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "whistler, diana",
+			"courses_avg": 82.22
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "kozak rogo, juliana",
+			"courses_avg": 82.22
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "370",
+			"courses_instructor": "",
+			"courses_avg": 82.24
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "370",
+			"courses_instructor": "trosper, ronald",
+			"courses_avg": 82.24
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "487",
+			"courses_instructor": "",
+			"courses_avg": 82.25
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "487",
+			"courses_instructor": "antweiler, werner",
+			"courses_avg": 82.25
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "305",
+			"courses_instructor": "",
+			"courses_avg": 82.27
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "305",
+			"courses_instructor": "beaudry, paul;yedid levi, yaniv",
+			"courses_avg": 82.27
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "457",
+			"courses_instructor": "",
+			"courses_avg": 82.28
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "457",
+			"courses_instructor": "kotwal, ashok",
+			"courses_avg": 82.28
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "450",
+			"courses_instructor": "jackes, robert",
+			"courses_avg": 82.29
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "486",
+			"courses_instructor": "",
+			"courses_avg": 82.3
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "486",
+			"courses_instructor": "hinch, scott",
+			"courses_avg": 82.3
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "388",
+			"courses_instructor": "",
+			"courses_avg": 82.3
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "601",
+			"courses_instructor": "",
+			"courses_avg": 82.31
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "601",
+			"courses_instructor": "li, hao;peters, michael",
+			"courses_avg": 82.31
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "600",
+			"courses_instructor": "",
+			"courses_avg": 82.31
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "600",
+			"courses_instructor": "halevy, yoram;peters, michael",
+			"courses_avg": 82.31
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "371",
+			"courses_instructor": "skoulakis, georgios",
+			"courses_avg": 82.31
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "466",
+			"courses_instructor": "",
+			"courses_avg": 82.34
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "466",
+			"courses_instructor": "cubbon, paul;hodgson, antony;kruchten, philippe;simonite, james",
+			"courses_avg": 82.34
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "371",
+			"courses_instructor": "martineau, charles",
+			"courses_avg": 82.34
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "412",
+			"courses_instructor": "granot, frieda",
+			"courses_avg": 82.35
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "307",
+			"courses_instructor": "monroe, mark",
+			"courses_avg": 82.35
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "527",
+			"courses_instructor": "",
+			"courses_avg": 82.36
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "527",
+			"courses_instructor": "marmer, vadim",
+			"courses_avg": 82.36
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "402",
+			"courses_instructor": "",
+			"courses_avg": 82.36
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "402",
+			"courses_instructor": "gurton, tracey",
+			"courses_avg": 82.36
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "626",
+			"courses_instructor": "",
+			"courses_avg": 82.38
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "626",
+			"courses_instructor": "song, kyungchul",
+			"courses_avg": 82.38
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "307",
+			"courses_instructor": "",
+			"courses_avg": 82.38
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "307",
+			"courses_instructor": "mcintyre, gerald",
+			"courses_avg": 82.38
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "459",
+			"courses_instructor": "",
+			"courses_avg": 82.41
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "377",
+			"courses_instructor": "bhamra, harjoat",
+			"courses_avg": 82.41
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "whistler, diana",
+			"courses_avg": 82.42
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "439",
+			"courses_instructor": "cheung, yau man",
+			"courses_avg": 82.42
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "541",
+			"courses_instructor": "",
+			"courses_avg": 82.43
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "541",
+			"courses_instructor": "kotwal, ashok",
+			"courses_avg": 82.43
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "304",
+			"courses_instructor": "",
+			"courses_avg": 82.43
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "304",
+			"courses_instructor": "knight, thomas",
+			"courses_avg": 82.43
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "601",
+			"courses_instructor": "",
+			"courses_avg": 82.47
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "601",
+			"courses_instructor": "severinov, sergei",
+			"courses_avg": 82.47
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "481",
+			"courses_instructor": "",
+			"courses_avg": 82.47
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "481",
+			"courses_instructor": "meitner, michael",
+			"courses_avg": 82.47
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "477",
+			"courses_instructor": "garlappi, lorenzo",
+			"courses_avg": 82.49
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "556",
+			"courses_instructor": "lahiri, amartya",
+			"courses_avg": 82.5
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "526",
+			"courses_instructor": "",
+			"courses_avg": 82.51
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "526",
+			"courses_instructor": "schrimpf, paul",
+			"courses_avg": 82.51
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "474",
+			"courses_instructor": "heinkel, robert lee",
+			"courses_avg": 82.51
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "290",
+			"courses_instructor": "das, anupam",
+			"courses_avg": 82.52
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "335",
+			"courses_instructor": "",
+			"courses_avg": 82.56
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "468",
+			"courses_instructor": "chen, jack",
+			"courses_avg": 82.57
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "411",
+			"courses_instructor": "",
+			"courses_avg": 82.57
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "411",
+			"courses_instructor": "",
+			"courses_avg": 82.57
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "556",
+			"courses_instructor": "",
+			"courses_avg": 82.58
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "556",
+			"courses_instructor": "lahiri, amartya",
+			"courses_avg": 82.58
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "malhotra, nisha",
+			"courses_avg": 82.59
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "562",
+			"courses_instructor": "",
+			"courses_avg": 82.6
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "562",
+			"courses_instructor": "milligan, kevin",
+			"courses_avg": 82.6
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "466",
+			"courses_instructor": "",
+			"courses_avg": 82.6
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "466",
+			"courses_instructor": "altman, jonas;cubbon, paul;hodgson, antony;kruchten, philippe;simonite, james",
+			"courses_avg": 82.6
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "469",
+			"courses_instructor": "",
+			"courses_avg": 82.64
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "469",
+			"courses_instructor": "tatla, parmjit",
+			"courses_avg": 82.64
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "204",
+			"courses_instructor": "huh, woonghee tim;nagarajan, mahesh",
+			"courses_avg": 82.64
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "546",
+			"courses_instructor": "",
+			"courses_avg": 82.65
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "546",
+			"courses_instructor": "devereux, michael;siu, henry",
+			"courses_avg": 82.65
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "song, kyungchul",
+			"courses_avg": 82.65
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "544",
+			"courses_instructor": "",
+			"courses_avg": 82.67
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "544",
+			"courses_instructor": "trebbi, francesco",
+			"courses_avg": 82.67
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "whistler, diana",
+			"courses_avg": 82.67
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "475",
+			"courses_instructor": "heinkel, robert lee",
+			"courses_avg": 82.67
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "narayan, chandan",
+			"courses_avg": 82.67
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "malhotra, nisha",
+			"courses_avg": 82.7
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "malhotra, nisha",
+			"courses_avg": 82.7
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "326",
+			"courses_instructor": "schrimpf, paul",
+			"courses_avg": 82.72
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "603",
+			"courses_instructor": "",
+			"courses_avg": 82.75
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "603",
+			"courses_instructor": "devereux, michael;siu, henry",
+			"courses_avg": 82.75
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "557",
+			"courses_instructor": "",
+			"courses_avg": 82.75
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "557",
+			"courses_instructor": "antweiler, werner",
+			"courses_avg": 82.75
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "305",
+			"courses_instructor": "",
+			"courses_avg": 82.76
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "305",
+			"courses_instructor": "van jaarsveld, danielle",
+			"courses_avg": 82.76
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "464",
+			"courses_instructor": "cubbon, paul",
+			"courses_avg": 82.77
+		},
+		{
+			"courses_dept": "coec",
+			"courses_id": "298",
+			"courses_instructor": "degraaf, darren",
+			"courses_avg": 82.77
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "390",
+			"courses_instructor": "furlong, carla",
+			"courses_avg": 82.79
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "377",
+			"courses_instructor": "novin, farid",
+			"courses_avg": 82.8
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "326",
+			"courses_instructor": "sakata, shinichi",
+			"courses_avg": 82.83
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "439",
+			"courses_instructor": "",
+			"courses_avg": 82.83
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "541",
+			"courses_instructor": "",
+			"courses_avg": 82.86
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "541",
+			"courses_instructor": "kotwal, ashok",
+			"courses_avg": 82.86
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "468",
+			"courses_instructor": "chen, jack",
+			"courses_avg": 82.86
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "398",
+			"courses_instructor": "graystone, brian",
+			"courses_avg": 82.86
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "202",
+			"courses_instructor": "watson, michelle tanya",
+			"courses_avg": 82.88
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "388",
+			"courses_instructor": "quayle, moura;thiruchittampalam, dharini",
+			"courses_avg": 82.91
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "412",
+			"courses_instructor": "granot, frieda",
+			"courses_avg": 82.92
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "451",
+			"courses_instructor": "",
+			"courses_avg": 82.94
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "451",
+			"courses_instructor": "lavallee, susanne",
+			"courses_avg": 82.94
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "306",
+			"courses_instructor": "",
+			"courses_avg": 82.95
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "306",
+			"courses_instructor": "peters, michael",
+			"courses_avg": 82.95
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "471",
+			"courses_instructor": "li, kai",
+			"courses_avg": 82.95
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "412",
+			"courses_instructor": "",
+			"courses_avg": 82.97
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "474",
+			"courses_instructor": "",
+			"courses_avg": 82.99
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "499",
+			"courses_instructor": "",
+			"courses_avg": 83
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "499",
+			"courses_instructor": "fortin, nicole",
+			"courses_avg": 83
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "671",
+			"courses_instructor": "",
+			"courses_avg": 83
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "671",
+			"courses_instructor": "kraus, alan d",
+			"courses_avg": 83
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "662",
+			"courses_instructor": "white, katherine",
+			"courses_avg": 83
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "320",
+			"courses_instructor": "",
+			"courses_avg": 83.02
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "546",
+			"courses_instructor": "",
+			"courses_avg": 83.04
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "546",
+			"courses_instructor": "",
+			"courses_avg": 83.04
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "388",
+			"courses_instructor": "",
+			"courses_avg": 83.06
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "459",
+			"courses_instructor": "begley, joy",
+			"courses_avg": 83.07
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "458",
+			"courses_instructor": "",
+			"courses_avg": 83.08
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "458",
+			"courses_instructor": "sinclair, scott",
+			"courses_avg": 83.08
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "431",
+			"courses_instructor": "mcintosh, ellen jane",
+			"courses_avg": 83.08
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "602",
+			"courses_instructor": "",
+			"courses_avg": 83.09
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "602",
+			"courses_instructor": "beaudry, paul",
+			"courses_avg": 83.09
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "451",
+			"courses_instructor": "",
+			"courses_avg": 83.09
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "451",
+			"courses_instructor": "",
+			"courses_avg": 83.09
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "474",
+			"courses_instructor": "",
+			"courses_avg": 83.09
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "474",
+			"courses_instructor": "heinkel, robert lee",
+			"courses_avg": 83.09
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "408",
+			"courses_instructor": "",
+			"courses_avg": 83.09
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "408",
+			"courses_instructor": "monroe, mark",
+			"courses_avg": 83.09
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "255",
+			"courses_instructor": "kotwal, ashok",
+			"courses_avg": 83.11
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "497",
+			"courses_instructor": "tergiman, chloe",
+			"courses_avg": 83.12
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "388",
+			"courses_instructor": "beausoleil, angele",
+			"courses_avg": 83.12
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "560",
+			"courses_instructor": "",
+			"courses_avg": 83.13
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "560",
+			"courses_instructor": "fortin, nicole",
+			"courses_avg": 83.13
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "627",
+			"courses_instructor": "",
+			"courses_avg": 83.14
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "627",
+			"courses_instructor": "marmer, vadim",
+			"courses_avg": 83.14
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "514",
+			"courses_instructor": "",
+			"courses_avg": 83.14
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "514",
+			"courses_instructor": "li, hao;li, wei",
+			"courses_avg": 83.14
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "573",
+			"courses_instructor": "",
+			"courses_avg": 83.16
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "573",
+			"courses_instructor": "copeland, brian",
+			"courses_avg": 83.16
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "527",
+			"courses_instructor": "",
+			"courses_avg": 83.16
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "527",
+			"courses_instructor": "marmer, vadim",
+			"courses_avg": 83.16
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "326",
+			"courses_instructor": "marmer, vadim",
+			"courses_avg": 83.17
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "453",
+			"courses_instructor": "campbell, chuck",
+			"courses_avg": 83.18
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "374",
+			"courses_instructor": "",
+			"courses_avg": 83.19
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "374",
+			"courses_instructor": "gulati, sumeet",
+			"courses_avg": 83.19
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "556",
+			"courses_instructor": "",
+			"courses_avg": 83.2
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "556",
+			"courses_instructor": "lahiri, amartya",
+			"courses_avg": 83.2
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "671",
+			"courses_instructor": "",
+			"courses_avg": 83.2
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "671",
+			"courses_instructor": "kraus, alan d",
+			"courses_avg": 83.2
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "437",
+			"courses_instructor": "",
+			"courses_avg": 83.2
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "437",
+			"courses_instructor": "tan, william",
+			"courses_avg": 83.2
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "377",
+			"courses_instructor": "novin, farid",
+			"courses_avg": 83.2
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "556",
+			"courses_instructor": "",
+			"courses_avg": 83.21
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "693",
+			"courses_instructor": "",
+			"courses_avg": 83.21
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "693",
+			"courses_instructor": "winter, ralph",
+			"courses_avg": 83.21
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "634",
+			"courses_instructor": "",
+			"courses_avg": 83.22
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "634",
+			"courses_instructor": "benbasat, izak",
+			"courses_avg": 83.22
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "514",
+			"courses_instructor": "",
+			"courses_avg": 83.25
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "514",
+			"courses_instructor": "li, wei",
+			"courses_avg": 83.25
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "634",
+			"courses_instructor": "",
+			"courses_avg": 83.25
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "634",
+			"courses_instructor": "benbasat, izak",
+			"courses_avg": 83.25
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "527",
+			"courses_instructor": "",
+			"courses_avg": 83.26
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "527",
+			"courses_instructor": "marmer, vadim",
+			"courses_avg": 83.26
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "402",
+			"courses_instructor": "",
+			"courses_avg": 83.26
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "402",
+			"courses_instructor": "gurton, tracey",
+			"courses_avg": 83.26
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "565",
+			"courses_instructor": "",
+			"courses_avg": 83.27
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "565",
+			"courses_instructor": "winter, ralph",
+			"courses_avg": 83.27
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "562",
+			"courses_instructor": "",
+			"courses_avg": 83.28
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "562",
+			"courses_instructor": "",
+			"courses_avg": 83.28
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "439",
+			"courses_instructor": "cheung, yau man",
+			"courses_avg": 83.28
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "335",
+			"courses_instructor": "",
+			"courses_avg": 83.28
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "halevy, yoram",
+			"courses_avg": 83.3
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "527",
+			"courses_instructor": "",
+			"courses_avg": 83.31
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "527",
+			"courses_instructor": "marmer, vadim",
+			"courses_avg": 83.31
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "neary, hugh",
+			"courses_avg": 83.31
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "457",
+			"courses_instructor": "",
+			"courses_avg": 83.32
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "457",
+			"courses_instructor": "malhotra, nisha",
+			"courses_avg": 83.32
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "411",
+			"courses_instructor": "",
+			"courses_avg": 83.33
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "411",
+			"courses_instructor": "gurton, tracey",
+			"courses_avg": 83.33
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "474",
+			"courses_instructor": "heinkel, robert lee",
+			"courses_avg": 83.35
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "320",
+			"courses_instructor": "chung, tran khue",
+			"courses_avg": 83.35
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "526",
+			"courses_instructor": "",
+			"courses_avg": 83.36
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "526",
+			"courses_instructor": "schrimpf, paul",
+			"courses_avg": 83.36
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "527",
+			"courses_instructor": "",
+			"courses_avg": 83.37
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "527",
+			"courses_instructor": "marmer, vadim",
+			"courses_avg": 83.37
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "626",
+			"courses_instructor": "",
+			"courses_avg": 83.4
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "626",
+			"courses_instructor": "song, kyungchul",
+			"courses_avg": 83.4
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "453",
+			"courses_instructor": "campbell, chuck",
+			"courses_avg": 83.4
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "451",
+			"courses_instructor": "",
+			"courses_avg": 83.41
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "451",
+			"courses_instructor": "lavallee, susanne",
+			"courses_avg": 83.41
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "malhotra, nisha",
+			"courses_avg": 83.42
+		},
+		{
+			"courses_dept": "onco",
+			"courses_id": "502",
+			"courses_instructor": "",
+			"courses_avg": 83.45
+		},
+		{
+			"courses_dept": "onco",
+			"courses_id": "502",
+			"courses_instructor": "",
+			"courses_avg": 83.45
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "502",
+			"courses_instructor": "",
+			"courses_avg": 83.45
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "502",
+			"courses_instructor": "hnatkovska, viktoriya",
+			"courses_avg": 83.45
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "451",
+			"courses_instructor": "",
+			"courses_avg": 83.45
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "451",
+			"courses_instructor": "hinch, scott;lavallee, susanne",
+			"courses_avg": 83.45
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "459",
+			"courses_instructor": "begley, joy",
+			"courses_avg": 83.46
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "",
+			"courses_avg": 83.47
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "vatikiotis-bateson, eric",
+			"courses_avg": 83.47
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "502",
+			"courses_instructor": "",
+			"courses_avg": 83.5
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "502",
+			"courses_instructor": "hnatkovska, viktoriya",
+			"courses_avg": 83.5
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "335",
+			"courses_instructor": "cheung, yau man",
+			"courses_avg": 83.51
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "600",
+			"courses_instructor": "",
+			"courses_avg": 83.52
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "600",
+			"courses_instructor": "peters, michael",
+			"courses_avg": 83.52
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "298",
+			"courses_instructor": "zeng, lulu",
+			"courses_avg": 83.52
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "304",
+			"courses_instructor": "",
+			"courses_avg": 83.53
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "304",
+			"courses_instructor": "halevy, yoram",
+			"courses_avg": 83.53
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "466",
+			"courses_instructor": "",
+			"courses_avg": 83.53
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "466",
+			"courses_instructor": "cubbon, paul;dahl, darren",
+			"courses_avg": 83.53
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "431",
+			"courses_instructor": "",
+			"courses_avg": 83.54
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "431",
+			"courses_instructor": "mcintosh, ellen jane",
+			"courses_avg": 83.54
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "626",
+			"courses_instructor": "",
+			"courses_avg": 83.56
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "626",
+			"courses_instructor": "sakata, shinichi",
+			"courses_avg": 83.56
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "370",
+			"courses_instructor": "marshall, peter",
+			"courses_avg": 83.56
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "408",
+			"courses_instructor": "",
+			"courses_avg": 83.57
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "408",
+			"courses_instructor": "monroe, mark",
+			"courses_avg": 83.57
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "320",
+			"courses_instructor": "chung, tran khue",
+			"courses_avg": 83.57
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "626",
+			"courses_instructor": "",
+			"courses_avg": 83.58
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "626",
+			"courses_instructor": "song, kyungchul",
+			"courses_avg": 83.58
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "311",
+			"courses_instructor": "",
+			"courses_avg": 83.58
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "311",
+			"courses_instructor": "seidel, marc-david",
+			"courses_avg": 83.58
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "malhotra, nisha",
+			"courses_avg": 83.61
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "626",
+			"courses_instructor": "",
+			"courses_avg": 83.62
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "626",
+			"courses_instructor": "sakata, shinichi",
+			"courses_avg": 83.62
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "song, unjy",
+			"courses_avg": 83.63
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "",
+			"courses_avg": 83.63
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "tba;vatikiotis-bateson, eric",
+			"courses_avg": 83.63
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "305",
+			"courses_instructor": "",
+			"courses_avg": 83.65
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "305",
+			"courses_instructor": "yedid levi, yaniv",
+			"courses_avg": 83.65
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "671",
+			"courses_instructor": "",
+			"courses_avg": 83.67
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "671",
+			"courses_instructor": "lazrak, ali",
+			"courses_avg": 83.67
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "447",
+			"courses_instructor": "",
+			"courses_avg": 83.67
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "447",
+			"courses_instructor": "gillen, david",
+			"courses_avg": 83.67
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "305",
+			"courses_instructor": "",
+			"courses_avg": 83.68
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "305",
+			"courses_instructor": "gallipoli, giovanni",
+			"courses_avg": 83.68
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "412",
+			"courses_instructor": "granot, frieda",
+			"courses_avg": 83.69
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "453",
+			"courses_instructor": "campbell, chuck",
+			"courses_avg": 83.7
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "",
+			"courses_avg": 83.7
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "vatikiotis-bateson, eric",
+			"courses_avg": 83.7
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "565",
+			"courses_instructor": "",
+			"courses_avg": 83.73
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "565",
+			"courses_instructor": "",
+			"courses_avg": 83.73
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "467",
+			"courses_instructor": "silk, timothy",
+			"courses_avg": 83.74
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "601",
+			"courses_instructor": "",
+			"courses_avg": 83.79
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "601",
+			"courses_instructor": "severinov, sergei",
+			"courses_avg": 83.79
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "301",
+			"courses_instructor": "",
+			"courses_avg": 83.8
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "301",
+			"courses_instructor": "aquino, karl",
+			"courses_avg": 83.8
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "464",
+			"courses_instructor": "",
+			"courses_avg": 83.83
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "305",
+			"courses_instructor": "",
+			"courses_avg": 83.84
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "305",
+			"courses_instructor": "berrington, david arthur",
+			"courses_avg": 83.84
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "499",
+			"courses_instructor": "",
+			"courses_avg": 83.85
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "499",
+			"courses_instructor": "anderson, kristin siwan",
+			"courses_avg": 83.85
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "471",
+			"courses_instructor": "",
+			"courses_avg": 83.85
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "451",
+			"courses_instructor": "",
+			"courses_avg": 83.86
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "451",
+			"courses_instructor": "lavallee, susanne",
+			"courses_avg": 83.86
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "451",
+			"courses_instructor": "",
+			"courses_avg": 83.88
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "451",
+			"courses_instructor": "lavallee, susanne",
+			"courses_avg": 83.88
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "439",
+			"courses_instructor": "cheung, yau man",
+			"courses_avg": 83.9
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "550",
+			"courses_instructor": "",
+			"courses_avg": 83.92
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "550",
+			"courses_instructor": "rehavi, michal",
+			"courses_avg": 83.92
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "626",
+			"courses_instructor": "",
+			"courses_avg": 83.94
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "626",
+			"courses_instructor": "song, kyungchul",
+			"courses_avg": 83.94
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "390",
+			"courses_instructor": "bowker, elizabeth",
+			"courses_avg": 83.95
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "514",
+			"courses_instructor": "",
+			"courses_avg": 83.96
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "514",
+			"courses_instructor": "li, wei",
+			"courses_avg": 83.96
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "573",
+			"courses_instructor": "",
+			"courses_avg": 84
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "573",
+			"courses_instructor": "copeland, brian",
+			"courses_avg": 84
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "561",
+			"courses_instructor": "",
+			"courses_avg": 84
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "561",
+			"courses_instructor": "fortin, nicole",
+			"courses_avg": 84
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "695",
+			"courses_instructor": "",
+			"courses_avg": 84
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "695",
+			"courses_instructor": "bena, jan;ortiz-molina, hernan",
+			"courses_avg": 84
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "662",
+			"courses_instructor": "",
+			"courses_avg": 84
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "662",
+			"courses_instructor": "dahl, darren;griffin, dale",
+			"courses_avg": 84
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "433",
+			"courses_instructor": "",
+			"courses_avg": 84
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "433",
+			"courses_instructor": "mcintosh, ellen jane",
+			"courses_avg": 84
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "301",
+			"courses_instructor": "",
+			"courses_avg": 84
+		},
+		{
+			"courses_dept": "cohr",
+			"courses_id": "301",
+			"courses_instructor": "aquino, karl",
+			"courses_avg": 84
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "471",
+			"courses_instructor": "li, kai",
+			"courses_avg": 84.02
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "371",
+			"courses_instructor": "baldauf, markus",
+			"courses_avg": 84.02
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "malhotra, nisha",
+			"courses_avg": 84.05
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "439",
+			"courses_instructor": "",
+			"courses_avg": 84.05
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "439",
+			"courses_instructor": "cheung, yau man",
+			"courses_avg": 84.05
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "fortin, nicole",
+			"courses_avg": 84.06
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "565",
+			"courses_instructor": "",
+			"courses_avg": 84.07
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "565",
+			"courses_instructor": "schrimpf, paul",
+			"courses_avg": 84.07
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "101",
+			"courses_instructor": "",
+			"courses_avg": 84.08
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "101",
+			"courses_instructor": "arcese, peter",
+			"courses_avg": 84.08
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "388",
+			"courses_instructor": "beausoleil, angele",
+			"courses_avg": 84.09
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "546",
+			"courses_instructor": "",
+			"courses_avg": 84.1
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "546",
+			"courses_instructor": "dunbar, geoffrey",
+			"courses_avg": 84.1
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "471",
+			"courses_instructor": "",
+			"courses_avg": 84.1
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "436",
+			"courses_instructor": "shi, duo",
+			"courses_avg": 84.11
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "550",
+			"courses_instructor": "",
+			"courses_avg": 84.13
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "550",
+			"courses_instructor": "rehavi, michal",
+			"courses_avg": 84.13
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "672",
+			"courses_instructor": "",
+			"courses_avg": 84.13
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "672",
+			"courses_instructor": "giammarino, ronald;heinkel, robert lee",
+			"courses_avg": 84.13
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "671",
+			"courses_instructor": "",
+			"courses_avg": 84.14
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "671",
+			"courses_instructor": "lazrak, ali",
+			"courses_avg": 84.14
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "693",
+			"courses_instructor": "",
+			"courses_avg": 84.18
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "693",
+			"courses_instructor": "brander, james",
+			"courses_avg": 84.18
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "671",
+			"courses_instructor": "",
+			"courses_avg": 84.18
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "671",
+			"courses_instructor": "lazrak, ali",
+			"courses_avg": 84.18
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "471",
+			"courses_instructor": "li, kai",
+			"courses_avg": 84.18
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "311",
+			"courses_instructor": "",
+			"courses_avg": 84.18
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "311",
+			"courses_instructor": "chandler, frances",
+			"courses_avg": 84.18
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "457",
+			"courses_instructor": "",
+			"courses_avg": 84.24
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "457",
+			"courses_instructor": "malhotra, nisha",
+			"courses_avg": 84.24
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "439",
+			"courses_instructor": "",
+			"courses_avg": 84.25
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "581",
+			"courses_instructor": "",
+			"courses_avg": 84.27
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "581",
+			"courses_instructor": "zhang, zhe",
+			"courses_avg": 84.27
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "602",
+			"courses_instructor": "",
+			"courses_avg": 84.29
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "602",
+			"courses_instructor": "beaudry, paul;yedid levi, yaniv",
+			"courses_avg": 84.29
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "474",
+			"courses_instructor": "",
+			"courses_avg": 84.29
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "626",
+			"courses_instructor": "",
+			"courses_avg": 84.3
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "626",
+			"courses_instructor": "song, kyungchul",
+			"courses_avg": 84.3
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "541",
+			"courses_instructor": "",
+			"courses_avg": 84.31
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "541",
+			"courses_instructor": "mccasland, jamie",
+			"courses_avg": 84.31
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "695",
+			"courses_instructor": "",
+			"courses_avg": 84.36
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "695",
+			"courses_instructor": "bena, jan;ortiz molina, hernan",
+			"courses_avg": 84.36
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "561",
+			"courses_instructor": "",
+			"courses_avg": 84.37
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "561",
+			"courses_instructor": "green, david",
+			"courses_avg": 84.37
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "363",
+			"courses_instructor": "zhu, ting",
+			"courses_avg": 84.37
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "557",
+			"courses_instructor": "",
+			"courses_avg": 84.38
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "557",
+			"courses_instructor": "",
+			"courses_avg": 84.38
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "vatikiotis-bateson, eric",
+			"courses_avg": 84.39
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "335",
+			"courses_instructor": "tan, william",
+			"courses_avg": 84.4
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "halevy, yoram",
+			"courses_avg": 84.41
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "451",
+			"courses_instructor": "",
+			"courses_avg": 84.43
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "451",
+			"courses_instructor": "lavallee, susanne",
+			"courses_avg": 84.43
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "406",
+			"courses_instructor": "",
+			"courses_avg": 84.44
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "406",
+			"courses_instructor": "qirjo, dhimitri",
+			"courses_avg": 84.44
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "408",
+			"courses_instructor": "",
+			"courses_avg": 84.44
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "408",
+			"courses_instructor": "monroe, mark",
+			"courses_avg": 84.44
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "544",
+			"courses_instructor": "",
+			"courses_avg": 84.46
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "544",
+			"courses_instructor": "trebbi, francesco",
+			"courses_avg": 84.46
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "439",
+			"courses_instructor": "",
+			"courses_avg": 84.5
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "439",
+			"courses_instructor": "cheung, yau man",
+			"courses_avg": 84.5
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "374",
+			"courses_instructor": "",
+			"courses_avg": 84.53
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "374",
+			"courses_instructor": "",
+			"courses_avg": 84.53
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "song, unjy",
+			"courses_avg": 84.57
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "436",
+			"courses_instructor": "woo, carson c",
+			"courses_avg": 84.6
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "370",
+			"courses_instructor": "",
+			"courses_avg": 84.62
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "439",
+			"courses_instructor": "cheung, yau man",
+			"courses_avg": 84.62
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "325",
+			"courses_instructor": "whistler, diana",
+			"courses_avg": 84.63
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "660",
+			"courses_instructor": "weinberg, charles",
+			"courses_avg": 84.63
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "vatikiotis-bateson, eric",
+			"courses_avg": 84.64
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "562",
+			"courses_instructor": "",
+			"courses_avg": 84.65
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "562",
+			"courses_instructor": "milligan, kevin",
+			"courses_avg": 84.65
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "malhotra, nisha",
+			"courses_avg": 84.65
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "127",
+			"courses_instructor": "",
+			"courses_avg": 84.66
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "127",
+			"courses_instructor": "coops, nicholas charles",
+			"courses_avg": 84.66
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "377",
+			"courses_instructor": "novin, farid",
+			"courses_avg": 84.68
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "",
+			"courses_avg": 84.69
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "vatikiotis-bateson, eric",
+			"courses_avg": 84.69
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "602",
+			"courses_instructor": "",
+			"courses_avg": 84.71
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "602",
+			"courses_instructor": "beaudry, paul;yedid levi, yaniv",
+			"courses_avg": 84.71
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "389",
+			"courses_instructor": "",
+			"courses_avg": 84.72
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "389",
+			"courses_instructor": "southcott, james",
+			"courses_avg": 84.72
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "457",
+			"courses_instructor": "",
+			"courses_avg": 84.73
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "457",
+			"courses_instructor": "malhotra, nisha",
+			"courses_avg": 84.73
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "672",
+			"courses_instructor": "",
+			"courses_avg": 84.73
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "672",
+			"courses_instructor": "gornall, will",
+			"courses_avg": 84.73
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "561",
+			"courses_instructor": "",
+			"courses_avg": 84.75
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "561",
+			"courses_instructor": "green, david",
+			"courses_avg": 84.75
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "627",
+			"courses_instructor": "",
+			"courses_avg": 84.77
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "627",
+			"courses_instructor": "marmer, vadim",
+			"courses_avg": 84.77
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "581",
+			"courses_instructor": "",
+			"courses_avg": 84.77
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "581",
+			"courses_instructor": "essak, martha",
+			"courses_avg": 84.77
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "527",
+			"courses_instructor": "",
+			"courses_avg": 84.82
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "527",
+			"courses_instructor": "marmer, vadim",
+			"courses_avg": 84.82
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "101",
+			"courses_instructor": "",
+			"courses_avg": 84.82
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "101",
+			"courses_instructor": "carroll, allan",
+			"courses_avg": 84.82
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "464",
+			"courses_instructor": "cubbon, paul",
+			"courses_avg": 84.84
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "603",
+			"courses_instructor": "",
+			"courses_avg": 84.86
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "603",
+			"courses_instructor": "",
+			"courses_avg": 84.86
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "471",
+			"courses_instructor": "li, kai",
+			"courses_avg": 84.86
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "693",
+			"courses_instructor": "",
+			"courses_avg": 84.91
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "693",
+			"courses_instructor": "winter, ralph",
+			"courses_avg": 84.91
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "306",
+			"courses_instructor": "",
+			"courses_avg": 84.95
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "306",
+			"courses_instructor": "persitz, dotan",
+			"courses_avg": 84.95
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "374",
+			"courses_instructor": "",
+			"courses_avg": 84.96
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "374",
+			"courses_instructor": "gulati, sumeet",
+			"courses_avg": 84.96
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "370",
+			"courses_instructor": "trosper, ronald",
+			"courses_avg": 84.96
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "",
+			"courses_avg": 84.97
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "406",
+			"courses_instructor": "",
+			"courses_avg": 85
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "406",
+			"courses_instructor": "severinov, sergei",
+			"courses_avg": 85
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "671",
+			"courses_instructor": "",
+			"courses_avg": 85
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "671",
+			"courses_instructor": "kraus, alan d",
+			"courses_avg": 85
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "660",
+			"courses_instructor": "",
+			"courses_avg": 85
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "660",
+			"courses_instructor": "weinberg, charles",
+			"courses_avg": 85
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "525",
+			"courses_instructor": "",
+			"courses_avg": 85
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "525",
+			"courses_instructor": "griffin, dale",
+			"courses_avg": 85
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "477",
+			"courses_instructor": "",
+			"courses_avg": 85.07
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "457",
+			"courses_instructor": "",
+			"courses_avg": 85.11
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "457",
+			"courses_instructor": "malhotra, nisha",
+			"courses_avg": 85.11
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "557",
+			"courses_instructor": "",
+			"courses_avg": 85.14
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "557",
+			"courses_instructor": "antweiler, werner",
+			"courses_avg": 85.14
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "525",
+			"courses_instructor": "",
+			"courses_avg": 85.14
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "525",
+			"courses_instructor": "cenfetelli, ronald timothy",
+			"courses_avg": 85.14
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "439",
+			"courses_instructor": "",
+			"courses_avg": 85.14
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "439",
+			"courses_instructor": "cheung, yau man",
+			"courses_avg": 85.14
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "561",
+			"courses_instructor": "",
+			"courses_avg": 85.17
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "561",
+			"courses_instructor": "hoffmann, florian",
+			"courses_avg": 85.17
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "525",
+			"courses_instructor": "",
+			"courses_avg": 85.17
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "525",
+			"courses_instructor": "robinson, sandra",
+			"courses_avg": 85.17
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "439",
+			"courses_instructor": "",
+			"courses_avg": 85.17
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "439",
+			"courses_instructor": "cheung, yau man",
+			"courses_avg": 85.17
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "544",
+			"courses_instructor": "",
+			"courses_avg": 85.18
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "544",
+			"courses_instructor": "trebbi, francesco",
+			"courses_avg": 85.18
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "662",
+			"courses_instructor": "",
+			"courses_avg": 85.2
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "662",
+			"courses_instructor": "hoegg, jo andrea",
+			"courses_avg": 85.2
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "326",
+			"courses_instructor": "marmer, vadim",
+			"courses_avg": 85.23
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "311",
+			"courses_instructor": "",
+			"courses_avg": 85.23
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "311",
+			"courses_instructor": "seidel, marc-david",
+			"courses_avg": 85.23
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "marmer, vadim",
+			"courses_avg": 85.28
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "660",
+			"courses_instructor": "",
+			"courses_avg": 85.29
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "660",
+			"courses_instructor": "hoegg, jo andrea",
+			"courses_avg": 85.29
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "573",
+			"courses_instructor": "",
+			"courses_avg": 85.3
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "573",
+			"courses_instructor": "copeland, brian",
+			"courses_avg": 85.3
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "",
+			"courses_avg": 85.3
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "573",
+			"courses_instructor": "",
+			"courses_avg": 85.33
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "573",
+			"courses_instructor": "copeland, brian",
+			"courses_avg": 85.33
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "306",
+			"courses_instructor": "",
+			"courses_avg": 85.33
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "306",
+			"courses_instructor": "peters, michael",
+			"courses_avg": 85.33
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "452",
+			"courses_instructor": "",
+			"courses_avg": 85.33
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "452",
+			"courses_instructor": "",
+			"courses_avg": 85.33
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "693",
+			"courses_instructor": "",
+			"courses_avg": 85.33
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "693",
+			"courses_instructor": "winter, ralph",
+			"courses_avg": 85.33
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "628",
+			"courses_instructor": "",
+			"courses_avg": 85.38
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "628",
+			"courses_instructor": "green, david",
+			"courses_avg": 85.38
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "627",
+			"courses_instructor": "",
+			"courses_avg": 85.4
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "627",
+			"courses_instructor": "marmer, vadim",
+			"courses_avg": 85.4
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "546",
+			"courses_instructor": "",
+			"courses_avg": 85.4
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "546",
+			"courses_instructor": "beaudry, paul;siu, henry",
+			"courses_avg": 85.4
+		},
+		{
+			"courses_dept": "onco",
+			"courses_id": "502",
+			"courses_instructor": "",
+			"courses_avg": 85.41
+		},
+		{
+			"courses_dept": "onco",
+			"courses_id": "502",
+			"courses_instructor": "weng, andrew",
+			"courses_avg": 85.41
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "527",
+			"courses_instructor": "",
+			"courses_avg": 85.43
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "527",
+			"courses_instructor": "marmer, vadim",
+			"courses_avg": 85.43
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "628",
+			"courses_instructor": "",
+			"courses_avg": 85.44
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "628",
+			"courses_instructor": "kasahara, hiroyuki",
+			"courses_avg": 85.44
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "601",
+			"courses_instructor": "",
+			"courses_avg": 85.47
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "601",
+			"courses_instructor": "severinov, sergei",
+			"courses_avg": 85.47
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "anderson, kristin siwan",
+			"courses_avg": 85.5
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "693",
+			"courses_instructor": "",
+			"courses_avg": 85.5
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "693",
+			"courses_instructor": "winter, ralph",
+			"courses_avg": 85.5
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "",
+			"courses_avg": 85.5
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "neary, hugh",
+			"courses_avg": 85.53
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "660",
+			"courses_instructor": "",
+			"courses_avg": 85.54
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "672",
+			"courses_instructor": "",
+			"courses_avg": 85.56
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "672",
+			"courses_instructor": "giammarino, ronald;heinkel, robert lee",
+			"courses_avg": 85.56
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "693",
+			"courses_instructor": "",
+			"courses_avg": 85.6
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "693",
+			"courses_instructor": "winter, ralph",
+			"courses_avg": 85.6
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "662",
+			"courses_instructor": "",
+			"courses_avg": 85.67
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "662",
+			"courses_instructor": "hoegg, jo andrea",
+			"courses_avg": 85.67
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "495",
+			"courses_instructor": "",
+			"courses_avg": 85.73
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "495",
+			"courses_instructor": "fortin, nicole",
+			"courses_avg": 85.73
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "307",
+			"courses_instructor": "",
+			"courses_avg": 85.73
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "307",
+			"courses_instructor": "mcintyre, gerald",
+			"courses_avg": 85.73
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "603",
+			"courses_instructor": "",
+			"courses_avg": 85.75
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "603",
+			"courses_instructor": "beaudry, paul;siu, henry",
+			"courses_avg": 85.75
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "barbosa, adriano;vatikiotis-bateson, eric",
+			"courses_avg": 85.77
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "325",
+			"courses_instructor": "whistler, diana",
+			"courses_avg": 85.78
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "335",
+			"courses_instructor": "cheung, yau man",
+			"courses_avg": 85.78
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "474",
+			"courses_instructor": "zeng, lulu",
+			"courses_avg": 85.81
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "vatikiotis-bateson, eric",
+			"courses_avg": 85.81
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "377",
+			"courses_instructor": "novin, farid",
+			"courses_avg": 85.85
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "628",
+			"courses_instructor": "",
+			"courses_avg": 85.88
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "628",
+			"courses_instructor": "inoue, atsushi",
+			"courses_avg": 85.88
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "628",
+			"courses_instructor": "",
+			"courses_avg": 85.89
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "628",
+			"courses_instructor": "kasahara, hiroyuki",
+			"courses_avg": 85.89
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "527",
+			"courses_instructor": "",
+			"courses_avg": 85.91
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "527",
+			"courses_instructor": "marmer, vadim",
+			"courses_avg": 85.91
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "693",
+			"courses_instructor": "",
+			"courses_avg": 85.92
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "693",
+			"courses_instructor": "winter, ralph",
+			"courses_avg": 85.92
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "374",
+			"courses_instructor": "",
+			"courses_avg": 85.98
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "374",
+			"courses_instructor": "gulati, sumeet",
+			"courses_avg": 85.98
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "640",
+			"courses_instructor": "gallipoli, giovanni;siu, henry",
+			"courses_avg": 86
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "627",
+			"courses_instructor": "",
+			"courses_avg": 86
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "627",
+			"courses_instructor": "marmer, vadim",
+			"courses_avg": 86
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "531",
+			"courses_instructor": "",
+			"courses_avg": 86
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "531",
+			"courses_instructor": "drelichman, mauricio",
+			"courses_avg": 86
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "498",
+			"courses_instructor": "",
+			"courses_avg": 86
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "672",
+			"courses_instructor": "",
+			"courses_avg": 86
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "672",
+			"courses_instructor": "giammarino, ronald;heinkel, robert lee",
+			"courses_avg": 86
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "474",
+			"courses_instructor": "zeng, lulu",
+			"courses_avg": 86.02
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "546",
+			"courses_instructor": "",
+			"courses_avg": 86.08
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "546",
+			"courses_instructor": "devereux, michael;gallipoli, giovanni",
+			"courses_avg": 86.08
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "502",
+			"courses_instructor": "",
+			"courses_avg": 86.1
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "502",
+			"courses_instructor": "kumar, alok",
+			"courses_avg": 86.1
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "408",
+			"courses_instructor": "",
+			"courses_avg": 86.1
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "408",
+			"courses_instructor": "monroe, mark",
+			"courses_avg": 86.1
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "388",
+			"courses_instructor": "pennefather, patrick;quayle, moura",
+			"courses_avg": 86.1
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "662",
+			"courses_instructor": "",
+			"courses_avg": 86.17
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "628",
+			"courses_instructor": "",
+			"courses_avg": 86.19
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "628",
+			"courses_instructor": "kasahara, hiroyuki",
+			"courses_avg": 86.19
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "457",
+			"courses_instructor": "",
+			"courses_avg": 86.19
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "457",
+			"courses_instructor": "malhotra, nisha",
+			"courses_avg": 86.19
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "525",
+			"courses_instructor": "",
+			"courses_avg": 86.2
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "525",
+			"courses_instructor": "robinson, sandra",
+			"courses_avg": 86.2
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "600",
+			"courses_instructor": "",
+			"courses_avg": 86.25
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "600",
+			"courses_instructor": "peters, michael",
+			"courses_avg": 86.25
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "560",
+			"courses_instructor": "",
+			"courses_avg": 86.25
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "560",
+			"courses_instructor": "fortin, nicole;lemieux, thomas",
+			"courses_avg": 86.25
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "305",
+			"courses_instructor": "",
+			"courses_avg": 86.38
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "305",
+			"courses_instructor": "beaudry, paul;yedid levi, yaniv",
+			"courses_avg": 86.38
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "497",
+			"courses_instructor": "tergiman, chloe",
+			"courses_avg": 86.39
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "561",
+			"courses_instructor": "",
+			"courses_avg": 86.4
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "561",
+			"courses_instructor": "fortin, nicole;lemieux, thomas",
+			"courses_avg": 86.4
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "525",
+			"courses_instructor": "",
+			"courses_avg": 86.4
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "525",
+			"courses_instructor": "robinson, sandra",
+			"courses_avg": 86.4
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "305",
+			"courses_instructor": "",
+			"courses_avg": 86.42
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "305",
+			"courses_instructor": "beaudry, paul;yedid levi, yaniv",
+			"courses_avg": 86.42
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "",
+			"courses_avg": 86.44
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "",
+			"courses_avg": 86.48
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "vatikiotis-bateson, eric",
+			"courses_avg": 86.48
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "",
+			"courses_avg": 86.5
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "603",
+			"courses_instructor": "",
+			"courses_avg": 86.54
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "603",
+			"courses_instructor": "gallipoli, giovanni;siu, henry",
+			"courses_avg": 86.54
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "626",
+			"courses_instructor": "",
+			"courses_avg": 86.56
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "626",
+			"courses_instructor": "",
+			"courses_avg": 86.56
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "516",
+			"courses_instructor": "",
+			"courses_avg": 86.56
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "516",
+			"courses_instructor": "gallipoli, giovanni",
+			"courses_avg": 86.56
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "573",
+			"courses_instructor": "",
+			"courses_avg": 86.57
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "573",
+			"courses_instructor": "copeland, brian",
+			"courses_avg": 86.57
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "495",
+			"courses_instructor": "",
+			"courses_avg": 86.71
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "495",
+			"courses_instructor": "",
+			"courses_avg": 86.71
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "556",
+			"courses_instructor": "",
+			"courses_avg": 86.72
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "556",
+			"courses_instructor": "lahiri, amartya",
+			"courses_avg": 86.72
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "640",
+			"courses_instructor": "",
+			"courses_avg": 86.77
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "526",
+			"courses_instructor": "",
+			"courses_avg": 86.8
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "526",
+			"courses_instructor": "schrimpf, paul",
+			"courses_avg": 86.8
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "695",
+			"courses_instructor": "",
+			"courses_avg": 86.84
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "695",
+			"courses_instructor": "carlson, murray;fisher, adlai",
+			"courses_avg": 86.84
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "560",
+			"courses_instructor": "",
+			"courses_avg": 86.86
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "560",
+			"courses_instructor": "green, david",
+			"courses_avg": 86.86
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "389",
+			"courses_instructor": "",
+			"courses_avg": 86.86
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "389",
+			"courses_instructor": "southcott, james",
+			"courses_avg": 86.86
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "",
+			"courses_avg": 86.92
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "600",
+			"courses_instructor": "",
+			"courses_avg": 87
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "600",
+			"courses_instructor": "peters, michael",
+			"courses_avg": 87
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "556",
+			"courses_instructor": "lahiri, amartya",
+			"courses_avg": 87
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "550",
+			"courses_instructor": "",
+			"courses_avg": 87
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "550",
+			"courses_instructor": "",
+			"courses_avg": 87
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "499",
+			"courses_instructor": "",
+			"courses_avg": 87
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "499",
+			"courses_instructor": "fortin, nicole",
+			"courses_avg": 87
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "305",
+			"courses_instructor": "",
+			"courses_avg": 87
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "305",
+			"courses_instructor": "yedid levi, yaniv",
+			"courses_avg": 87
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "671",
+			"courses_instructor": "",
+			"courses_avg": 87
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "671",
+			"courses_instructor": "lazrak, ali",
+			"courses_avg": 87
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "660",
+			"courses_instructor": "dahl, darren;zhu, juliet",
+			"courses_avg": 87
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "634",
+			"courses_instructor": "",
+			"courses_avg": 87
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "634",
+			"courses_instructor": "benbasat, izak",
+			"courses_avg": 87
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "311",
+			"courses_instructor": "",
+			"courses_avg": 87
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "311",
+			"courses_instructor": "robinson, sandra",
+			"courses_avg": 87
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "371",
+			"courses_instructor": "novin, farid",
+			"courses_avg": 87.05
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "",
+			"courses_avg": 87.05
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "437",
+			"courses_instructor": "tan, william",
+			"courses_avg": 87.11
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "580",
+			"courses_instructor": "",
+			"courses_avg": 87.25
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "580",
+			"courses_instructor": "diewert, w erwin",
+			"courses_avg": 87.25
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "499",
+			"courses_instructor": "",
+			"courses_avg": 87.29
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "499",
+			"courses_instructor": "",
+			"courses_avg": 87.29
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "495",
+			"courses_instructor": "",
+			"courses_avg": 87.33
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "495",
+			"courses_instructor": "fortin, nicole",
+			"courses_avg": 87.33
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "307",
+			"courses_instructor": "",
+			"courses_avg": 87.37
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "307",
+			"courses_instructor": "",
+			"courses_avg": 87.37
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "603",
+			"courses_instructor": "",
+			"courses_avg": 87.38
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "603",
+			"courses_instructor": "gallipoli, giovanni",
+			"courses_avg": 87.38
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "640",
+			"courses_instructor": "gallipoli, giovanni;siu, henry",
+			"courses_avg": 87.43
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "541",
+			"courses_instructor": "",
+			"courses_avg": 87.5
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "541",
+			"courses_instructor": "anderson, kristin siwan",
+			"courses_avg": 87.5
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "477",
+			"courses_instructor": "garlappi, lorenzo",
+			"courses_avg": 87.51
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "603",
+			"courses_instructor": "",
+			"courses_avg": 87.58
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "603",
+			"courses_instructor": "devereux, michael;gallipoli, giovanni",
+			"courses_avg": 87.58
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "541",
+			"courses_instructor": "",
+			"courses_avg": 87.58
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "541",
+			"courses_instructor": "kotwal, ashok",
+			"courses_avg": 87.58
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "627",
+			"courses_instructor": "",
+			"courses_avg": 87.6
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "627",
+			"courses_instructor": "marmer, vadim",
+			"courses_avg": 87.6
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "531",
+			"courses_instructor": "",
+			"courses_avg": 87.6
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "531",
+			"courses_instructor": "drelichman, mauricio",
+			"courses_avg": 87.6
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "514",
+			"courses_instructor": "",
+			"courses_avg": 87.69
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "514",
+			"courses_instructor": "li, wei",
+			"courses_avg": 87.69
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "627",
+			"courses_instructor": "",
+			"courses_avg": 87.77
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "627",
+			"courses_instructor": "marmer, vadim",
+			"courses_avg": 87.77
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "565",
+			"courses_instructor": "",
+			"courses_avg": 87.86
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "565",
+			"courses_instructor": "schrimpf, paul",
+			"courses_avg": 87.86
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "640",
+			"courses_instructor": "francois, patrick",
+			"courses_avg": 87.89
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "490",
+			"courses_instructor": "song, kyungchul",
+			"courses_avg": 87.89
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "602",
+			"courses_instructor": "",
+			"courses_avg": 87.92
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "602",
+			"courses_instructor": "yedid levi, yaniv",
+			"courses_avg": 87.92
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "693",
+			"courses_instructor": "",
+			"courses_avg": 87.92
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "693",
+			"courses_instructor": "winter, ralph",
+			"courses_avg": 87.92
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "640",
+			"courses_instructor": "francois, patrick",
+			"courses_avg": 88
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "516",
+			"courses_instructor": "",
+			"courses_avg": 88
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "516",
+			"courses_instructor": "gallipoli, giovanni",
+			"courses_avg": 88
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "499",
+			"courses_instructor": "",
+			"courses_avg": 88
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "499",
+			"courses_instructor": "anderson, kristin siwan",
+			"courses_avg": 88
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "407",
+			"courses_instructor": "",
+			"courses_avg": 88
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "407",
+			"courses_instructor": "perla, jesse",
+			"courses_avg": 88
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "vatikiotis-bateson, eric",
+			"courses_avg": 88
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "603",
+			"courses_instructor": "",
+			"courses_avg": 88.09
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "603",
+			"courses_instructor": "gallipoli, giovanni",
+			"courses_avg": 88.09
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "560",
+			"courses_instructor": "",
+			"courses_avg": 88.11
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "560",
+			"courses_instructor": "hoffmann, florian",
+			"courses_avg": 88.11
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "499",
+			"courses_instructor": "",
+			"courses_avg": 88.15
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "499",
+			"courses_instructor": "fortin, nicole",
+			"courses_avg": 88.15
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "495",
+			"courses_instructor": "",
+			"courses_avg": 88.15
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "495",
+			"courses_instructor": "fortin, nicole",
+			"courses_avg": 88.15
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "531",
+			"courses_instructor": "",
+			"courses_avg": 88.17
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "531",
+			"courses_instructor": "drelichman, mauricio",
+			"courses_avg": 88.17
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "693",
+			"courses_instructor": "",
+			"courses_avg": 88.18
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "693",
+			"courses_instructor": "winter, ralph",
+			"courses_avg": 88.18
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "narayan, chandan;vatikiotis-bateson, eric",
+			"courses_avg": 88.21
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "514",
+			"courses_instructor": "",
+			"courses_avg": 88.27
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "514",
+			"courses_instructor": "farinha luz, vitor",
+			"courses_avg": 88.27
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "628",
+			"courses_instructor": "",
+			"courses_avg": 88.31
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "628",
+			"courses_instructor": "kasahara, hiroyuki",
+			"courses_avg": 88.31
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "580",
+			"courses_instructor": "",
+			"courses_avg": 88.31
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "580",
+			"courses_instructor": "diewert, w erwin",
+			"courses_avg": 88.31
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "516",
+			"courses_instructor": "",
+			"courses_avg": 88.33
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "516",
+			"courses_instructor": "gallipoli, giovanni",
+			"courses_avg": 88.33
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "327",
+			"courses_instructor": "",
+			"courses_avg": 88.33
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "327",
+			"courses_instructor": "marmer, vadim",
+			"courses_avg": 88.33
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "407",
+			"courses_instructor": "",
+			"courses_avg": 88.39
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "407",
+			"courses_instructor": "perla, jesse",
+			"courses_avg": 88.39
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "600",
+			"courses_instructor": "",
+			"courses_avg": 88.4
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "600",
+			"courses_instructor": "halevy, yoram;peters, michael",
+			"courses_avg": 88.4
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "560",
+			"courses_instructor": "",
+			"courses_avg": 88.4
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "560",
+			"courses_instructor": "",
+			"courses_avg": 88.4
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "498",
+			"courses_instructor": "",
+			"courses_avg": 88.5
+		},
+		{
+			"courses_dept": "cons",
+			"courses_id": "498",
+			"courses_instructor": "marshall, peter",
+			"courses_avg": 88.5
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "580",
+			"courses_instructor": "",
+			"courses_avg": 88.53
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "580",
+			"courses_instructor": "diewert, w erwin",
+			"courses_avg": 88.53
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "525",
+			"courses_instructor": "",
+			"courses_avg": 88.6
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "525",
+			"courses_instructor": "robinson, sandra",
+			"courses_avg": 88.6
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "526",
+			"courses_instructor": "",
+			"courses_avg": 88.62
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "526",
+			"courses_instructor": "schrimpf, paul",
+			"courses_avg": 88.62
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "640",
+			"courses_instructor": "",
+			"courses_avg": 88.67
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "640",
+			"courses_instructor": "",
+			"courses_avg": 88.67
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "603",
+			"courses_instructor": "",
+			"courses_avg": 88.78
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "603",
+			"courses_instructor": "devereux, michael;siu, henry",
+			"courses_avg": 88.78
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "602",
+			"courses_instructor": "",
+			"courses_avg": 88.78
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "602",
+			"courses_instructor": "beaudry, paul;yedid levi, yaniv",
+			"courses_avg": 88.78
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "580",
+			"courses_instructor": "",
+			"courses_avg": 88.81
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "580",
+			"courses_instructor": "diewert, w erwin",
+			"courses_avg": 88.81
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "499",
+			"courses_instructor": "",
+			"courses_avg": 88.82
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "499",
+			"courses_instructor": "fortin, nicole",
+			"courses_avg": 88.82
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "495",
+			"courses_instructor": "",
+			"courses_avg": 88.83
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "495",
+			"courses_instructor": "fortin, nicole",
+			"courses_avg": 88.83
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "567",
+			"courses_instructor": "",
+			"courses_avg": 89
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "567",
+			"courses_instructor": "hwang, il myoung",
+			"courses_avg": 89
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "560",
+			"courses_instructor": "",
+			"courses_avg": 89
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "560",
+			"courses_instructor": "fortin, nicole",
+			"courses_avg": 89
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "640",
+			"courses_instructor": "",
+			"courses_avg": 89.14
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "640",
+			"courses_instructor": "francois, patrick",
+			"courses_avg": 89.14
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "516",
+			"courses_instructor": "",
+			"courses_avg": 89.14
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "516",
+			"courses_instructor": "beaudry, paul",
+			"courses_avg": 89.14
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "627",
+			"courses_instructor": "",
+			"courses_avg": 89.19
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "627",
+			"courses_instructor": "",
+			"courses_avg": 89.19
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "566",
+			"courses_instructor": "",
+			"courses_avg": 89.25
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "566",
+			"courses_instructor": "song, unjy",
+			"courses_avg": 89.25
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "523",
+			"courses_instructor": "",
+			"courses_avg": 89.29
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "523",
+			"courses_instructor": "halevy, yoram",
+			"courses_avg": 89.29
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "499",
+			"courses_instructor": "",
+			"courses_avg": 89.3
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "499",
+			"courses_instructor": "anderson, kristin siwan",
+			"courses_avg": 89.3
+		},
+		{
+			"courses_dept": "cogs",
+			"courses_id": "402",
+			"courses_instructor": "barbosa, adriano;vatikiotis-bateson, eric",
+			"courses_avg": 89.33
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "640",
+			"courses_instructor": "francois, patrick",
+			"courses_avg": 89.44
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "581",
+			"courses_instructor": "",
+			"courses_avg": 89.5
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "581",
+			"courses_instructor": "ghement, isabella",
+			"courses_avg": 89.5
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "466",
+			"courses_instructor": "",
+			"courses_avg": 89.5
+		},
+		{
+			"courses_dept": "comm",
+			"courses_id": "466",
+			"courses_instructor": "cubbon, paul;dahl, darren",
+			"courses_avg": 89.5
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "499",
+			"courses_instructor": "",
+			"courses_avg": 89.54
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "499",
+			"courses_instructor": "fortin, nicole",
+			"courses_avg": 89.54
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "546",
+			"courses_instructor": "",
+			"courses_avg": 89.6
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "546",
+			"courses_instructor": "perla, jesse",
+			"courses_avg": 89.6
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "307",
+			"courses_instructor": "",
+			"courses_avg": 89.64
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "307",
+			"courses_instructor": "perla, jesse",
+			"courses_avg": 89.64
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "425",
+			"courses_instructor": "",
+			"courses_avg": 89.68
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "425",
+			"courses_instructor": "sakata, shinichi",
+			"courses_avg": 89.68
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "626",
+			"courses_instructor": "",
+			"courses_avg": 89.74
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "626",
+			"courses_instructor": "sakata, shinichi",
+			"courses_avg": 89.74
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "495",
+			"courses_instructor": "",
+			"courses_avg": 89.77
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "495",
+			"courses_instructor": "anderson, kristin siwan",
+			"courses_avg": 89.77
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "628",
+			"courses_instructor": "",
+			"courses_avg": 89.92
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "628",
+			"courses_instructor": "",
+			"courses_avg": 89.92
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "495",
+			"courses_instructor": "",
+			"courses_avg": 89.92
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "495",
+			"courses_instructor": "fortin, nicole",
+			"courses_avg": 89.92
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "495",
+			"courses_instructor": "",
+			"courses_avg": 89.92
+		},
+		{
+			"courses_dept": "econ",
+			"courses_id": "495",
+			"courses_instructor": "fortin, nicole",
+			"courses_avg": 89.92
+		},
+		{
+			"courses_dept": "onco",
+			"courses_id": "502",
+			"courses_instructor": "",
+			"courses_avg": 89.94
+		},
+		{
+			"courses_dept": "onco",
+			"courses_id": "502",
+			"courses_instructor": "takei, fumio",
+			"courses_avg": 89.94
+		}
+	]
+}

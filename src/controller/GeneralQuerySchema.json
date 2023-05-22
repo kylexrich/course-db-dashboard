@@ -1,0 +1,140 @@
+{
+	"title": "GENERAL SCHEMA FOR VALIDIFYING A QUERY",
+	"description": "Validifies a Query",
+	"additionalProperties": false,
+	"patternProperties": {
+		"WHERE": {
+			"type": "object",
+			"additionalProperties": false,
+			"patternProperties": {
+				"EQ": {"$ref": "#/definitions/EQ" },
+				"IS": {"$ref": "#/definitions/IS" },
+				"GT": {"$ref": "#/definitions/GT" },
+				"LT": {"$ref": "#/definitions/LT" },
+				"NOT": {"$ref": "#/definitions/NOT"},
+				"OR": {"$ref": "#/definitions/OR"},
+				"AND": {"$ref": "#/definitions/AND"}
+			}
+		},
+		"OPTIONS": {
+			"properties": {
+				"COLUMNS": {
+					"type": "array",
+					"minItems": 1,
+					"additionalItems": false,
+					"items":
+					{
+						"type": "string",
+						"$ref": "#/definitions/keys"
+					}
+				},
+				"ORDER": {
+					"type": "string",
+					"$ref": "#/definitions/keys"
+				}
+			},
+			"required": [ "COLUMNS" ]
+		}
+	},
+	"required": [ "WHERE", "OPTIONS" ],
+	"definitions": {
+		"keys": {
+			"type": "string",
+			"enum": ["XXX_avg", "XXX_pass", "XXX_fail", "XXX_audit", "XXX_year",
+				"XXX_dept", "XXX_instructor", "XXX_uuid", "XXX_id", "XXX_title"]
+		},
+		"EQ": {
+			"type": "object",
+			"additionalProperties": false,
+			"patternProperties": {
+				"XXX_avg": { "type": "number" },
+				"XXX_pass": { "type": "number" },
+				"XXX_fail": { "type": "number" },
+				"XXX_audit": { "type": "number" },
+				"XXX_year": { "type": "number" }
+			}
+		},
+		"GT": {
+			"type": "object",
+			"additionalProperties": false,
+			"patternProperties": {
+				"XXX_avg": { "type": "number" },
+				"XXX_pass": { "type": "number" },
+				"XXX_fail": { "type": "number" },
+				"XXX_audit": { "type": "number" },
+				"XXX_year": { "type": "number" }
+			}
+		},
+		"LT": {
+			"type": "object",
+			"additionalProperties": false,
+			"patternProperties": {
+				"XXX_avg": { "type": "number" },
+				"XXX_pass": { "type": "number" },
+				"XXX_fail": { "type": "number" },
+				"XXX_audit": { "type": "number" },
+				"XXX_year": { "type": "number" }
+			}
+		},
+		"IS": {
+			"type": "object",
+			"additionalProperties": false,
+			"patternProperties": {
+				"XXX_dept": { "type": "string" },
+				"XXX_instructor": { "type": "string" },
+				"XXX_uuid": { "type": "string" },
+				"XXX_id": { "type": "string" },
+				"XXX_title": { "type": "string" }
+			}
+		},
+		"NOT": {
+			"type": "object",
+			"additionalProperties": false,
+			"patternProperties": {
+				"GT":  { "$ref": "#/definitions/GT" },
+				"EQ":  { "$ref": "#/definitions/EQ" },
+				"LT":  { "$ref": "#/definitions/LT" },
+				"IS":  { "$ref": "#/definitions/IS" },
+				"NOT": { "$ref": "#/definitions/NOT" },
+				"OR":  { "$ref": "#/definitions/OR" },
+				"AND": { "$ref": "#/definitions/AND" }
+			}
+		},
+		"OR": {
+			"type": "array",
+			"minItems": 1,
+			"additionalItems": false,
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"patternProperties": {
+					"GT": { "$ref": "#/definitions/GT"},
+					"EQ" : { "$ref": "#/definitions/EQ" },
+					"LT" : { "$ref": "#/definitions/LT" },
+					"IS": { "$ref": "#/definitions/IS" },
+					"NOT": { "$ref": "#/definitions/NOT" },
+					"OR": { "$ref": "#/definitions/OR" },
+					"AND": { "$ref": "#/definitions/AND" }
+				}
+			}
+		},
+		"AND": {
+			"type": "array",
+			"minItems": 1,
+			"additionalItems": false,
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"patternProperties": {
+					"GT": { "$ref": "#/definitions/GT"},
+					"EQ" : { "$ref": "#/definitions/EQ" },
+					"LT" : { "$ref": "#/definitions/LT" },
+					"IS": { "$ref": "#/definitions/IS" },
+					"NOT": { "$ref": "#/definitions/NOT" },
+					"OR": { "$ref": "#/definitions/OR" },
+					"AND": { "$ref": "#/definitions/AND" }
+				}
+			}
+		}
+	}
+}
